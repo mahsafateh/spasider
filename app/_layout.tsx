@@ -2,6 +2,7 @@ import { SplashScreen, Stack } from "expo-router";
 import "./global.css";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
+import {LinearGradient} from "expo-linear-gradient";
 
 export default function RootLayout() {
   const [fontsLoaded, error] = useFonts({
@@ -11,10 +12,12 @@ export default function RootLayout() {
     "QuickSand-SemiBold": require("../assets/fonts/Quicksand-SemiBold.ttf"),
     "QuickSand-Light": require("../assets/fonts/Quicksand-Light.ttf"),
   });
-  
+
   useEffect(() => {
     if (error) throw error;
     if (fontsLoaded) SplashScreen.hideAsync();
   }, [fontsLoaded, error]);
-  return <Stack screenOptions={{ headerShown: false }} />;
+  return (
+      <Stack screenOptions={{ headerShown: false }} />
+  );
 }

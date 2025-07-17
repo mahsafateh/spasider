@@ -9,6 +9,24 @@ module.exports = {
   presets: [require('nativewind/preset')],
   theme: {
     extend: {
+      colors: {
+        textDark: "#222",
+        backgroundMain: '#EEEEEE',
+        main: 'rgba(159,179,223,0.85)'
+      },
+      borderRadius: {
+        md: "8px",
+      },
+      boxShadow: {
+        input: "0 2px 4px rgba(0,0,0,0.1)", // shadow
+      },
+      spacing: {
+        2.5: "10px",
+        11: "44px",
+      },
+      fontSize: {
+        base16: "16px",
+      },
       fontFamily: {
         quicksand: ["Quicksand-Regular", "sans-serif"],
         "quicksand-bold": ["Quicksand-Bold", "sans-serif"],
