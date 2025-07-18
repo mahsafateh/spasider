@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { View, TextInput, Animated, StyleSheet } from 'react-native';
-import {FloatingLabelInputProps} from "@/types";
+import React, { useState, useRef, useEffect } from "react";
+import { View, TextInput, Animated, StyleSheet } from "react-native";
+import { FloatingLabelInputProps } from "@/types";
 
 export default function FloatingLabelInput({
   label,
@@ -13,22 +13,22 @@ export default function FloatingLabelInput({
 
   useEffect(() => {
     Animated.timing(animatedIsFocused, {
-      toValue: isFocused || value ? 1 : 0,
+      toValue: isFocused || !!value ? 1 : 0,
       duration: 200,
       useNativeDriver: false,
     }).start();
   }, [isFocused, value]);
 
   const staticLabelStyle = {
-    position: 'absolute' as const,
+    position: "absolute" as const,
     left: 18,
-    backgroundColor: '#EEEEEE',
+    backgroundColor: "#EEEEEE",
     paddingHorizontal: 14,
     paddingVertical: 2,
     zIndex: 1,
-    alignSelf: 'flex-start' as const,
-    fontFamily: 'Quicksand-SemiBold',
-    pointerEvents: 'none' as const,
+    alignSelf: "flex-start" as const,
+    fontFamily: "Quicksand-SemiBold",
+    pointerEvents: "none" as const,
   };
   const animatedLabelStyle = {
     top: animatedIsFocused.interpolate({
@@ -41,7 +41,7 @@ export default function FloatingLabelInput({
     }),
     color: animatedIsFocused.interpolate({
       inputRange: [0, 1],
-      outputRange: ['#aaa', '#555'],
+      outputRange: ["#aaa", "#555"],
     }),
   };
 
@@ -51,11 +51,13 @@ export default function FloatingLabelInput({
         {label}
       </Animated.Text>
       <TextInput
+        keyboardType='numeric'
         value={value}
         onChangeText={onChangeText}
-        className={'input'}
+        className={"input"}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
+        maxLength={2}
         blurOnSubmit
         {...props}
       />
@@ -68,4 +70,4 @@ const styles = StyleSheet.create({
     paddingTop: 18,
     marginBottom: 16,
   },
-}); 
+});

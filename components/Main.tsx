@@ -1,24 +1,37 @@
-import { View, Button } from "react-native";
+import { View } from "react-native";
+import { useState } from "react";
 import FloatingLabelInput from "./FloatingLabelInput";
+import FloatingLabelPicker from "@/components/FloatingLabelPicker";
+import PrimaryButton from "./PrimaryButton";
 
 function Main() {
-  const inputValueHandler = () => {
-    console.log("Input value handler");
-  }
-  return (
-    <View className={"flex-1 px-2 items-center "}>
- 
-      <View
-        className={"rounded-lg p-4 mb-2 w-full max-w-md"}
-      >
-        <FloatingLabelInput label='Category' onChangeText={inputValueHandler}/>
-   
-        <FloatingLabelInput label='Spies' onChangeText={inputValueHandler}/>
+  const [insiderInputValue, setInsiderInputValue] = useState("");
+  const [spyInputValue, setSpyInputValue] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
 
-        <FloatingLabelInput label='Insiders' onChangeText={inputValueHandler} />
+  return (
+    <View className={"flex-1 px-2 items-center"}>
+      <View className={"rounded-lg p-4 mb-2 w-full max-w-md"}>
+        <FloatingLabelPicker
+          label='Category'
+          value={selectedCategory}
+          onValueChange={setSelectedCategory}
+        />
+
+        <FloatingLabelInput
+          label='Spies'
+          value={spyInputValue}
+          onChangeText={setSpyInputValue}
+        />
+
+        <FloatingLabelInput
+          label='Insiders'
+          value={insiderInputValue}
+          onChangeText={setInsiderInputValue}
+        />
       </View>
-        <Button title={"Show"} />
-      </View>
+      <PrimaryButton onPress={() => console.log("Show pressed")} />
+    </View>
   );
 }
 

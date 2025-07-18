@@ -18,6 +18,6 @@
 
 @layer components {
   .input {
-    @apply h-11 text-base16 text-textDark bg-inherit border rounded-md px-2.5 py-2.5 ;
+    @apply h-11 text-base16 text-textDark bg-inherit border rounded-md px-2.5 py-2.5;
   }
 }
