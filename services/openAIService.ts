@@ -6,7 +6,7 @@ const client = new OpenAI({
 
 const generateResponse = async (
   userMessage: string,
-  systemPrompt: string = "You are a helpful assistant."
+  systemPrompt: string = "You are a helpful assistant.",
 ): Promise<string> => {
   try {
     const response = await client.chat.completions.create({

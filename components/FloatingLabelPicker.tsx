@@ -68,14 +68,17 @@ export default function FloatingLabelPicker({
         }}
         activeOpacity={0.8}
       >
-        <Text style={{ color: value ? "#222" : "#aaa", fontSize: 16 }}>
+        <Text
+          className={"font-quicksand-semibold"}
+          style={{ color: value ? "#222" : "#aaa", fontSize: 16 }}
+        >
           {value || ""}
         </Text>
       </TouchableOpacity>
       <Modal
         visible={modalVisible}
         transparent
-        animationType='fade'
+        animationType="fade"
         onRequestClose={() => {
           setModalVisible(false);
           setIsFocused(false);
@@ -91,6 +94,7 @@ export default function FloatingLabelPicker({
         >
           <View style={styles.modalContent}>
             <FlatList
+              className={"font-quicksand-semibold"}
               data={categories}
               keyExtractor={(item) => item.id}
               renderItem={({ item }) => (
@@ -102,7 +106,12 @@ export default function FloatingLabelPicker({
                     setIsFocused(false);
                   }}
                 >
-                  <Text style={{ fontSize: 16 }}>{item.name}</Text>
+                  <Text
+                    className={"font-quicksand-semibold"}
+                    style={{ fontSize: 16 }}
+                  >
+                    {item.name}
+                  </Text>
                 </TouchableOpacity>
               )}
             />

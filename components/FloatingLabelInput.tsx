@@ -51,10 +51,10 @@ export default function FloatingLabelInput({
         {label}
       </Animated.Text>
       <TextInput
-        keyboardType='numeric'
+        keyboardType="numeric"
         value={value}
         onChangeText={onChangeText}
-        className={"input"}
+        className={"input font-quicksand-semibold"}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
         maxLength={2}
@@ -67,6 +67,7 @@ export default function FloatingLabelInput({
 
 const styles = StyleSheet.create({
   container: {
+    fontFamily: "Quicksand-SemiBold",
     paddingTop: 18,
     marginBottom: 16,
   },

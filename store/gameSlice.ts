@@ -27,7 +27,7 @@ export const fetchWord = createAsyncThunk(
     } catch (error: any) {
       return rejectWithValue(error.message);
     }
-  }
+  },
 );
 
 const shuffle = (array: any[]) => {
@@ -54,7 +54,7 @@ const gameSlice = createSlice({
         category: string;
         spies: number;
         insiders: number;
-      }>
+      }>,
     ) {
       state.category = action.payload.category;
       state.spies = action.payload.spies;

@@ -1,12 +1,11 @@
-import { View } from "react-native";
+import { View, Keyboard, ScrollView } from "react-native";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { startGame, fetchWord } from "../store/gameSlice";
-import type { AppDispatch } from "../store";
+import { startGame, fetchWord } from "@/store/gameSlice";
+import type { AppDispatch } from "@/store";
 import FloatingLabelInput from "./FloatingLabelInput";
 import FloatingLabelPicker from "@/components/FloatingLabelPicker";
 import PrimaryButton from "./PrimaryButton";
-import { Keyboard } from "react-native";
 
 function Main() {
   const [insiderInputValue, setInsiderInputValue] = useState("");
@@ -25,22 +24,32 @@ function Main() {
   }, [gameStarted]);
 
   return (
-    <View className={"flex-1 px-2 items-center"}>
-      <View className={"rounded-lg p-4 mb-2 w-full max-w-md"}>
+    <ScrollView
+      contentContainerStyle={{
+        flexGrow: 1,
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+      keyboardShouldPersistTaps="handled"
+    >
+      <View
+        className={"rounded-lg p-4 mb-2"}
+        style={{ width: "100%", maxWidth: 400, alignSelf: "center" }}
+      >
         <FloatingLabelPicker
-          label='Category'
+          label="Category"
           value={selectedCategory}
           onValueChange={setSelectedCategory}
         />
 
         <FloatingLabelInput
-          label='Spies'
+          label="Spies"
           value={spyInputValue}
           onChangeText={setSpyInputValue}
         />
 
         <FloatingLabelInput
-          label='Insiders'
+          label="Insiders"
           value={insiderInputValue}
           onChangeText={setInsiderInputValue}
         />
@@ -55,7 +64,7 @@ function Main() {
           dispatch(fetchWord(selectedCategory));
         }}
       />
-    </View>
+    </ScrollView>
   );
 }
 

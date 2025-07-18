@@ -29,11 +29,11 @@ module.exports = {
         base16: "16px",
       },
       fontFamily: {
-        quicksand: ["Quicksand-Regular", "sans-serif"],
-        "quicksand-bold": ["Quicksand-Bold", "sans-serif"],
-        "quicksand-semibold": ["Quicksand-SemiBold", "sans-serif"],
-        "quicksand-light": ["Quicksand-Light", "sans-serif"],
-        "quicksand-medium": ["Quicksand-Medium", "sans-serif"],
+        sans: ["Quicksand-Regular"], // Default font
+        quicksand: ["Quicksand-Regular"],
+        "quicksand-semibold": ["Quicksand-SemiBold"],
+        "quicksand-bold": ["Quicksand-Bold"],
+        // Add other weights as needed
       },
     },
   },
