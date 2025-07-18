@@ -2,6 +2,8 @@ import { SplashScreen, Stack } from "expo-router";
 import "./global.css";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
+import { Provider } from "react-redux";
+import store from "../store";
 
 export default function RootLayout() {
   const [fontsLoaded, error] = useFonts({
@@ -16,5 +18,9 @@ export default function RootLayout() {
     if (error) throw error;
     if (fontsLoaded) SplashScreen.hideAsync();
   }, [fontsLoaded, error]);
-  return <Stack screenOptions={{ headerShown: false }} />;
+  return (
+    <Provider store={store}>
+      <Stack screenOptions={{ headerShown: false }} />
+    </Provider>
+  );
 }

@@ -9,9 +9,24 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Title from "@/components/Title";
 import Main from "@/components/Main";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../store";
+import { showRole, hideRole, resetGame } from "../store/gameSlice";
+import GamePanel from "@/components/GamePanel";
 
 export default function Index() {
-  const [response, setResponse] = useState("test");
+  const dispatch = useDispatch();
+  const {
+    gameStarted,
+    spies,
+    insiders,
+    word,
+    currentRole,
+    showWord,
+    roles,
+    loading,
+    error,
+  } = useSelector((state: RootState) => state.game);
 
   return (
     <KeyboardAvoidingView className='flex-1 bg-main '>
@@ -27,7 +42,7 @@ export default function Index() {
               <Main />
             </View>
             <View className={"flex-auto justify-center items-center"}>
-              <Text>{response}</Text>
+              <GamePanel />
             </View>
           </View>
         </SafeAreaView>

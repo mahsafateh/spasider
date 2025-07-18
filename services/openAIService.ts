@@ -4,7 +4,7 @@ const client = new OpenAI({
   apiKey: "",
 });
 
-export const generateResponse = async (
+const generateResponse = async (
   userMessage: string,
   systemPrompt: string = "You are a helpful assistant."
 ): Promise<string> => {
@@ -25,3 +25,5 @@ export const generateResponse = async (
     throw new Error("Failed to generate response");
   }
 };
+
+export { generateResponse, client };

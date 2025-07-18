@@ -24,3 +24,16 @@ export interface ButtonProps {
   textStyle?: TextStyle;
   disabled?: boolean;
 }
+
+export interface GameState {
+  category: string;
+  spies: number;
+  insiders: number;
+  word: string;
+  gameStarted: boolean;
+  roles: Array<"spy" | "insider">;
+  currentRole: "spy" | "insider" | null;
+  showWord: boolean;
+  loading: boolean;
+  error: string | null;
+}
