@@ -17,7 +17,7 @@ export default function Index() {
           <View className={"flex-1 justify-between font-quicksand-semibold"}>
             <View
               className={
-                "h-1/2 bg-backgroundMain rounded-2xl shadow-lg p-2 m-4"
+                "h-3/5 bg-backgroundMain rounded-2xl shadow-lg p-2 m-4"
               }
             >
               <Title title={"Spy & Insider"} />
