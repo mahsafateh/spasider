@@ -1,4 +1,5 @@
 import { SplashScreen } from "expo-router";
+import { ImageBackground } from "react-native";
 import "./global.css";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
@@ -27,11 +28,7 @@ export default function RootLayout() {
   }, [fontsLoaded, error]);
   return (
     <Provider store={store}>
-      {/*<Tab.Navigator>*/}
-      {/*  <Tab.Screen name="Home" component={index} />*/}
-      {/*  <Tab.Screen name="Profile" component={Profile} />*/}
-      {/*</Tab.Navigator>*/}
-
+    
       <Tab.Navigator
         screenOptions={({ route }) => ({
           headerShown: false,
@@ -69,7 +66,7 @@ export default function RootLayout() {
       >
         <Tab.Screen
           name="index"
-          component={Index} // This maps to (tabs)/index.tsx
+          component={Index}
           options={{
             title: "Home",
             tabBarIcon: ({ focused }) => (
@@ -78,7 +75,7 @@ export default function RootLayout() {
           }}
         />
         <Tab.Screen
-          name="Settings" // This maps to app/settings.tsx
+          name="Settings"
           component={Settings}
           options={{
             title: "Settings",
@@ -92,7 +89,7 @@ export default function RootLayout() {
           }}
         />
         <Tab.Screen
-          name="Profile" // This maps to app/profile.tsx
+          name="Profile"
           component={Profile}
           options={{
             title: "Profile",
