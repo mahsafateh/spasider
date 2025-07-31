@@ -1,50 +1,59 @@
-# Welcome to your Expo app 👋
+# 🕵️ Spy & Insider
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**Spy & Insider** is a mobile party game built with React Native that blends logic, deduction, and creativity. Designed for group play, this game challenges players to identify the hidden Spy among them through strategic two-choice questions and bluffing.
 
-## Get started
+---
 
-1. Install dependencies
+## 🎮 Game Overview
 
-   ```bash
-   npm install
-   ```
+Spy & Insider is ideal for groups of 3 or more players. One player is randomly selected as the **Spy**, and the rest are **Insiders** who receive a secret word. The Spy must blend in without knowing the word — while Insiders try to subtly expose the Spy without giving away the secret.
 
-2. Start the app
+---
+## 🧩 How to Play
 
-   ```bash
-   npx expo start
-   ```
+### 1. **Choose a Category**
+- Players select a word category (e.g., Food, Jobs, Animals).
+- Thousands of words are built-in and accessible offline.
 
-In the output, you'll find options to open the app in a
+### 2. **Assign Roles**
+- Input the number of **Spies** and **Insiders**.
+- ✅ **Recommended ratio**: **1 Spy for every 5 players** for balanced and engaging gameplay.
+- Tap **Start** to distribute roles.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### 3. **View Your Role**
+- **Insiders** receive the secret word.
+- The **Spy** gets no word — only the challenge to blend in.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### 4. **Question Rounds**
+- Players take turns asking creative two-option questions (e.g., “Is it soft or hard?”).
+- Insiders answer based on the word; the Spy must bluff convincingly.
 
-## Get a fresh project
+### 5. **Vote**
+- After 1–2 rounds of questions, players vote on who they suspect is the Spy.
+- Correct vote = Insider victory. Incorrect = Spy wins.
+---
 
-When you're ready, run:
+## 🛠️ Tech Stack
+
+- [React Native](https://reactnative.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Redux Toolkit](https://redux-toolkit.js.org/) for state management
+- [NativeWind](https://www.nativewind.dev/) (Tailwind CSS for React Native)
+- [i18next](https://www.i18next.com/) for internationalization
+- [OpenAI API](https://platform.openai.com/) for premium features
+
+---
+
+
+## 📱 Installation (for Developers)
 
 ```bash
-npm run reset-project
+git clone https://github.com/mahsafateh/spasider
+cd spasider
+npm install
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Created with ❤️ by Mahsa Fateh
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### Contact: mahssfaateh@gmail.com
