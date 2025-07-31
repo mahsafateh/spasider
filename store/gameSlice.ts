@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
-import { generateResponse } from "../services/openAIService";
 import { categories } from "../constants";
 import { GameState } from "@/types";
 
@@ -21,9 +20,9 @@ export const fetchWord = createAsyncThunk(
   async (category: string, { rejectWithValue }) => {
     try {
       const cat = categories.find((c) => c.name === category);
-      const prompt = cat?.prompt || "Give me just one random word";
-      const word = await generateResponse(prompt);
-      return word.trim();
+      const words = cat?.words || ["Random"];
+      const randomWord = words[Math.floor(Math.random() * words.length)];
+      return randomWord;
     } catch (error: any) {
       return rejectWithValue(error.message);
     }
