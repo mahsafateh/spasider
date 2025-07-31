@@ -1,33 +1,57 @@
 export const categories = [
-  { name: "Fruit", prompt: "Give me just one random fruit name", id: "1" },
+  { 
+    name: "Fruit", 
+    words: ["Apple", "Banana", "Orange", "Strawberry", "Grape", "Mango", "Pineapple", "Kiwi", "Peach", "Pear"],
+    id: "1" 
+  },
   {
     name: "Landmark",
-    prompt: "Give me just one random famous landmark or monument",
+    words: ["Eiffel Tower", "Statue of Liberty", "Taj Mahal", "Pyramids", "Big Ben", "Colosseum", "Machu Picchu", "Christ the Redeemer", "Petra", "Angkor Wat"],
     id: "2",
   },
-  { name: "Animal", prompt: "Give me just one random animal name", id: "3" },
+  { 
+    name: "Animal", 
+    words: ["Lion", "Elephant", "Giraffe", "Tiger", "Penguin", "Dolphin", "Kangaroo", "Panda", "Zebra", "Gorilla"],
+    id: "3" 
+  },
   {
     name: "City",
-    prompt: "Give me just one random city name from anywhere in the world",
+    words: ["New York", "London", "Paris", "Tokyo", "Sydney", "Rome", "Barcelona", "Amsterdam", "Vienna", "Prague"],
     id: "4",
   },
   {
     name: "Movie",
-    prompt: "Give me just one random popular movie title",
+    words: ["Titanic", "Avatar", "Star Wars", "The Godfather", "Jurassic Park", "Forrest Gump", "The Matrix", "Inception", "Interstellar", "The Lion King"],
     id: "5",
   },
-  { name: "Country", prompt: "Give me just one random country name", id: "6" },
-  { name: "Food", prompt: "Give me just one random food dish name", id: "7" },
-  { name: "Sport", prompt: "Give me just one random sport name", id: "8" },
-  { name: "Color", prompt: "Give me just one random color name", id: "9" },
+  { 
+    name: "Country", 
+    words: ["USA", "Canada", "Australia", "Japan", "Germany", "France", "Italy", "Spain", "Brazil", "India"],
+    id: "6" 
+  },
+  { 
+    name: "Food", 
+    words: ["Pizza", "Sushi", "Burger", "Pasta", "Tacos", "Curry", "Steak", "Salad", "Soup", "Sandwich"],
+    id: "7" 
+  },
+  { 
+    name: "Sport", 
+    words: ["Football", "Basketball", "Tennis", "Soccer", "Baseball", "Golf", "Swimming", "Volleyball", "Hockey", "Cricket"],
+    id: "8" 
+  },
+  { 
+    name: "Color", 
+    words: ["Red", "Blue", "Green", "Yellow", "Purple", "Orange", "Pink", "Black", "White", "Brown"],
+    id: "9" 
+  },
   {
     name: "Profession",
-    prompt: "Give me just one random job/profession",
+    words: ["Doctor", "Teacher", "Engineer", "Lawyer", "Chef", "Artist", "Police Officer", "Firefighter", "Nurse", "Architect"],
     id: "10",
   },
   {
     name: "Mixed Category",
-    prompt: "Give me just one random word in any categories",
+    words: ["Rainbow", "Mountain", "Ocean", "Forest", "Desert", "Island", "Volcano", "Waterfall", "Cave", "Beach"],
     id: "11",
   },
 ];
