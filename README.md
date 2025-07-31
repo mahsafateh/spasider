@@ -43,16 +43,6 @@ Spy & Insider is ideal for groups of 3 or more players. One player is randomly s
 
 ---
 
-
-## 📱 Installation (for Developers)
-
-```bash
-git clone https://github.com/mahsafateh/spasider
-cd spasider
-npm install
-npx expo start
-```
-
 ### Created with ❤️ by Mahsa Fateh
 
 ### Contact: mahssfaateh@gmail.com
