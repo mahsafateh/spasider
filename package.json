@@ -8,7 +8,14 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
@@ -29,6 +36,8 @@
     "expo-symbols": "~0.4.5",
     "expo-system-ui": "~5.0.10",
     "expo-web-browser": "~14.2.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
     "nativewind": "^4.1.23",
     "openai": "^5.10.1",
     "react": "19.0.0",
