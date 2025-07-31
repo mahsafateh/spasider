@@ -14,7 +14,6 @@ function Main() {
   const dispatch = useDispatch<AppDispatch>();
   const gameStarted = useSelector((state: any) => state.game.gameStarted);
 
-  // Reset inputs when game is reset
   useEffect(() => {
     if (!gameStarted) {
       setInsiderInputValue("");
@@ -33,7 +32,7 @@ function Main() {
       keyboardShouldPersistTaps="handled"
     >
       <View
-        className={"rounded-lg p-4 mb-2"}
+        className={"rounded-lg p-4"}
         style={{ width: "100%", maxWidth: 400, alignSelf: "center" }}
       >
         <FloatingLabelPicker
@@ -55,6 +54,7 @@ function Main() {
         />
       </View>
       <PrimaryButton
+      title={"🎲 Generate"}
         onPress={() => {
           Keyboard.dismiss();
           if (!selectedCategory || !spyInputValue || !insiderInputValue) return;

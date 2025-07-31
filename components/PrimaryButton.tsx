@@ -17,9 +17,10 @@ const PrimaryButton: React.FC<ButtonProps> = ({
       onPress={onPress}
       activeOpacity={0.7}
       disabled={disabled}
+      className="mb-2"
     >
       <Text style={[styles.text, textStyle]}>
-        {isLoading ? "Generating..." : "🎲 Generate"}
+        {title}
       </Text>
     </TouchableOpacity>
   );

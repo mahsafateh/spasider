@@ -32,7 +32,9 @@ const GamePanel = () => {
       keyboardShouldPersistTaps="handled"
     >
       <View
-        className={"flex-auto justify-center items-center min-h-[260px] w-full"}
+        className={
+          "flex-auto justify-center items-center min-h-[260px] w-full mt-8"
+        }
         style={{ width: "100%", maxWidth: 400, alignSelf: "center" }}
       >
         {loading && <Text>Loading...</Text>}
@@ -71,7 +73,6 @@ const GamePanel = () => {
                 <View style={{ height: WORD_BOX_HEIGHT }} />
               )}
             </View>
-            {/* Button area, always rendered */}
             <View className="flex-row items-center justify-center w-full">
               {roles.length > 0 || showWord ? (
                 <TouchableWithoutFeedback
