@@ -40,7 +40,6 @@ Spy & Insider is ideal for groups of 3 or more players. One player is randomly s
 - [Redux Toolkit](https://redux-toolkit.js.org/) for state management
 - [NativeWind](https://www.nativewind.dev/) (Tailwind CSS for React Native)
 - [i18next](https://www.i18next.com/) for internationalization
-- [OpenAI API](https://platform.openai.com/) for premium features
 
 ---
 
