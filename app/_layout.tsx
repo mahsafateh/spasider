@@ -1,12 +1,12 @@
 import { SplashScreen } from "expo-router";
-import { ImageBackground } from "react-native";
-import "./global.css";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
 import { Provider } from "react-redux";
-import store from "../store";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
+import { I18nManager } from "react-native";
+import "./global.css";
+import store from "../store";
 import Profile from "./(tabs)/Profile";
 import Settings from "./(tabs)/Settings";
 import Index from "@/app/(tabs)";
@@ -28,7 +28,6 @@ export default function RootLayout() {
   }, [fontsLoaded, error]);
   return (
     <Provider store={store}>
-    
       <Tab.Navigator
         screenOptions={({ route }) => ({
           headerShown: false,
