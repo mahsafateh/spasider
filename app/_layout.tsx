@@ -1,5 +1,4 @@
 import { SplashScreen } from "expo-router";
-import { ImageBackground } from "react-native";
 import "./global.css";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
@@ -28,7 +27,6 @@ export default function RootLayout() {
   }, [fontsLoaded, error]);
   return (
     <Provider store={store}>
-    
       <Tab.Navigator
         screenOptions={({ route }) => ({
           headerShown: false,
