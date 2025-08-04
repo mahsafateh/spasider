@@ -1,13 +1,33 @@
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import PrimaryButton from "@/components/PrimaryButton";
+import { SettingTile } from "@/components/SettingTile";
 
-const Settings = () => {
+const Settings = ({ navigation }: any) => {
   return (
     <SafeAreaView className={"flex-1"}>
-      <View className="flex-1">
-        <Text>Settings</Text>
-      </View>
+      <ScrollView className="flex-1">
+        <View className={"pt-4 px-2"}>
+          <SettingTile
+            icon="information-circle-outline"
+            label="About"
+            onPress={() => {}}
+          />
+          <SettingTile
+            icon="cloud-download-outline"
+            label="Software Update"
+            onPress={() => {}}
+          />
+          <SettingTile
+            icon="language"
+            label="Language"
+            onPress={() => {
+              navigation.navigate("Language");
+            }}
+          />
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
