@@ -1,5 +1,4 @@
 import { SplashScreen } from "expo-router";
-import { ImageBackground } from "react-native";
 import "./global.css";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
@@ -8,7 +7,7 @@ import store from "../store";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import Profile from "./(tabs)/Profile";
-import Settings from "./(tabs)/Settings";
+import SettingsStack from "./(tabs)/settings/SettingsStack";
 import Index from "@/app/(tabs)";
 
 const Tab = createBottomTabNavigator();
@@ -28,7 +27,6 @@ export default function RootLayout() {
   }, [fontsLoaded, error]);
   return (
     <Provider store={store}>
-    
       <Tab.Navigator
         screenOptions={({ route }) => ({
           headerShown: false,
@@ -37,8 +35,6 @@ export default function RootLayout() {
 
             if (route.name === "Home") {
               iconName = focused ? "home" : "home-outline";
-            } else if (route.name === "Search") {
-              iconName = focused ? "search" : "search-outline";
             } else if (route.name === "Profile") {
               iconName = focused ? "person" : "person-outline";
             } else if (route.name === "Settings") {
@@ -76,10 +72,10 @@ export default function RootLayout() {
         />
         <Tab.Screen
           name="Settings"
-          component={Settings}
+          component={SettingsStack}
           options={{
             title: "Settings",
-            headerTitle: "Settings",
+            headerShown: false,
             tabBarIcon: ({ focused }) => (
               <Ionicons
                 name={focused ? "settings" : "settings-outline"}
