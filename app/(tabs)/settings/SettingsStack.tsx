@@ -1,10 +1,10 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import SettingsIndex from "./index";
-import AboutScreen from "../../../screens/settingScreens/AboutScreen";
-import LanguageScreen from "../../../screens/settingScreens/LanguageScreen";
-import ThemeScreen from "../../../screens/settingScreens/ThemeScreen";
-import SoftwareUpdatesScreen from "../../../screens/settingScreens/SoftwareUpdatesScreen";
+import AboutScreen from "@/screens/settingScreens/AboutScreen";
+import LanguageScreen from "@/screens/settingScreens/LanguageScreen";
+import ThemeScreen from "@/screens/settingScreens/ThemeScreen";
+import SoftwareUpdatesScreen from "@/screens/settingScreens/SoftwareUpdatesScreen";
 
 const Stack = createStackNavigator();
 
