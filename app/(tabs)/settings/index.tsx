@@ -2,10 +2,8 @@ import { View, ScrollView } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { SettingTile } from "@/components/SettingTile";
-import { useRouter } from "expo-router";
 
-const Index = () => {
-  const router = useRouter();
+const Index = ({ navigation }: any) => {
   return (
     <SafeAreaView className={"flex-1"}>
       <ScrollView className="flex-1">
@@ -13,22 +11,22 @@ const Index = () => {
           <SettingTile
             icon="language"
             label="Language"
-            onPress={() => router.push("/(tabs)/settings/Language")}
+            onPress={() => navigation.navigate("Language")}
           />
           <SettingTile
             icon="color-palette-outline"
             label="Theme"
-            onPress={() => router.push("/(tabs)/settings/Theme")}
+            onPress={() => navigation.navigate("Theme")}
           />
           <SettingTile
             icon="information-circle-outline"
             label="About"
-            onPress={() => router.push("/(tabs)/settings/About")}
+            onPress={() => navigation.navigate("About")}
           />
           <SettingTile
             icon="cloud-download-outline"
             label="Software Update"
-            onPress={() => router.push("/(tabs)/settings/SoftwareUpdates")}
+            onPress={() => navigation.navigate("SoftwareUpdates")}
           />
         </View>
       </ScrollView>

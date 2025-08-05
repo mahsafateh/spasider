@@ -7,7 +7,7 @@ import store from "../store";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import Profile from "./(tabs)/Profile";
-import SettingsIndex from "./(tabs)/settings/index";
+import SettingsStack from "./(tabs)/settings/SettingsStack";
 import Index from "@/app/(tabs)";
 
 const Tab = createBottomTabNavigator();
@@ -72,10 +72,10 @@ export default function RootLayout() {
         />
         <Tab.Screen
           name="Settings"
-          component={SettingsIndex}
+          component={SettingsStack}
           options={{
             title: "Settings",
-            headerTitle: "Settings",
+            headerShown: false,
             tabBarIcon: ({ focused }) => (
               <Ionicons
                 name={focused ? "settings" : "settings-outline"}
