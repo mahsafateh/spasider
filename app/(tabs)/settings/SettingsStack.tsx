@@ -1,10 +1,10 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import SettingsIndex from "./index";
-import About from "./About";
-import Language from "./Language";
-import Theme from "./Theme";
-import SoftwareUpdates from "./SoftwareUpdates";
+import AboutScreen from "@/screens/settingScreens/AboutScreen";
+import LanguageScreen from "@/screens/settingScreens/LanguageScreen";
+import ThemeScreen from "@/screens/settingScreens/ThemeScreen";
+import SoftwareUpdatesScreen from "@/screens/settingScreens/SoftwareUpdatesScreen";
 
 const Stack = createStackNavigator();
 
@@ -24,28 +24,28 @@ export default function SettingsStack() {
       />
       <Stack.Screen
         name="About"
-        component={About}
+        component={AboutScreen}
         options={{
           title: "About",
         }}
       />
       <Stack.Screen
         name="Language"
-        component={Language}
+        component={LanguageScreen}
         options={{
           title: "Language",
         }}
       />
       <Stack.Screen
         name="Theme"
-        component={Theme}
+        component={ThemeScreen}
         options={{
           title: "Theme",
         }}
       />
       <Stack.Screen
         name="SoftwareUpdates"
-        component={SoftwareUpdates}
+        component={SoftwareUpdatesScreen}
         options={{
           title: "Software Updates",
         }}

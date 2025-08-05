@@ -1,5 +1,4 @@
 import { View, ScrollView } from "react-native";
-import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { SettingTile } from "@/components/SettingTile";
 
@@ -21,7 +20,7 @@ const Index = ({ navigation }: any) => {
           <SettingTile
             icon="information-circle-outline"
             label="About"
-            onPress={() => navigation.navigate("About")}
+            onPress={() => navigation.navigate("AboutScreen")}
           />
           <SettingTile
             icon="cloud-download-outline"
