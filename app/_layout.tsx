@@ -7,7 +7,7 @@ import store from "../store";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import Profile from "./(tabs)/Profile";
-import Settings from "./(tabs)/Settings";
+import SettingsIndex from "./(tabs)/settings/index";
 import Index from "@/app/(tabs)";
 
 const Tab = createBottomTabNavigator();
@@ -35,8 +35,6 @@ export default function RootLayout() {
 
             if (route.name === "Home") {
               iconName = focused ? "home" : "home-outline";
-            } else if (route.name === "Search") {
-              iconName = focused ? "search" : "search-outline";
             } else if (route.name === "Profile") {
               iconName = focused ? "person" : "person-outline";
             } else if (route.name === "Settings") {
@@ -74,7 +72,7 @@ export default function RootLayout() {
         />
         <Tab.Screen
           name="Settings"
-          component={Settings}
+          component={SettingsIndex}
           options={{
             title: "Settings",
             headerTitle: "Settings",
