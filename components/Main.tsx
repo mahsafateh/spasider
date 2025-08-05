@@ -54,7 +54,7 @@ function Main() {
         />
       </View>
       <PrimaryButton
-      title={"🎲 Generate"}
+        title={"Satrt 🎲"}
         onPress={() => {
           Keyboard.dismiss();
           if (!selectedCategory || !spyInputValue || !insiderInputValue) return;
