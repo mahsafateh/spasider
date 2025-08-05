@@ -1,7 +1,6 @@
 import { View, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { SettingTile } from "@/components/SettingTile";
-import Title from "@/components/Title";
 
 const Index = ({ navigation }: any) => {
   return (
