@@ -20,7 +20,7 @@ const Index = ({ navigation }: any) => {
           <SettingTile
             icon="information-circle-outline"
             label="About"
-            onPress={() => navigation.navigate("AboutScreen")}
+            onPress={() => navigation.navigate("About")}
           />
           <SettingTile
             icon="cloud-download-outline"
