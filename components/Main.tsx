@@ -1,4 +1,4 @@
-import { View, Keyboard, ScrollView } from "react-native";
+import { View, Keyboard, ScrollView, Platform } from "react-native";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { startGame, fetchWord } from "@/store/gameSlice";
@@ -28,6 +28,7 @@ function Main() {
         flexGrow: 1,
         alignItems: "center",
         justifyContent: "center",
+        backgroundColor: Platform.OS === "ios" ? "#EEEEEE" : "#fff",
       }}
       keyboardShouldPersistTaps="handled"
     >
@@ -54,7 +55,7 @@ function Main() {
         />
       </View>
       <PrimaryButton
-        title={"Satrt 🎲"}
+        title={"Start 🎲"}
         onPress={() => {
           Keyboard.dismiss();
           if (!selectedCategory || !spyInputValue || !insiderInputValue) return;
