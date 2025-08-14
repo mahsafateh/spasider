@@ -7,6 +7,7 @@ import {
   FlatList,
   StyleSheet,
   Animated,
+  Platform,
 } from "react-native";
 import { categories } from "@/constants";
 import { FloatingLabelPickerProps } from "@/types";
@@ -31,7 +32,7 @@ export default function FloatingLabelPicker({
   const staticLabelStyle = {
     position: "absolute" as const,
     left: 18,
-    backgroundColor: "#EEEEEE",
+    backgroundColor: Platform.OS === "ios" ? "#EEEEEE" : "#fff",
     paddingHorizontal: 14,
     paddingVertical: 2,
     zIndex: 1,

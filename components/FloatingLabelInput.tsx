@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { View, TextInput, Animated, StyleSheet } from "react-native";
+import { View, TextInput, Animated, StyleSheet, Platform } from "react-native";
 import { FloatingLabelInputProps } from "@/types";
 
 export default function FloatingLabelInput({
@@ -22,13 +22,18 @@ export default function FloatingLabelInput({
   const staticLabelStyle = {
     position: "absolute" as const,
     left: 18,
-    backgroundColor: "#EEEEEE",
+    //E7E7E7
+    backgroundColor: Platform.OS === "ios" ? "#EEEEEE" : "#fff",
     paddingHorizontal: 14,
     paddingVertical: 2,
     zIndex: 1,
     alignSelf: "flex-start" as const,
     fontFamily: "Quicksand-SemiBold",
     pointerEvents: "none" as const,
+    lineHeight: 18,
+    // Platform-specific tweaks
+    top: Platform.OS === "ios" ? 6 : 8,
+    fontSize: Platform.OS === "ios" ? 14 : 15,
   };
   const animatedLabelStyle = {
     top: animatedIsFocused.interpolate({
