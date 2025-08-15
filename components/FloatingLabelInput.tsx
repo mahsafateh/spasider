@@ -23,7 +23,6 @@ export default function FloatingLabelInput({
     position: "absolute" as const,
     left: 10,
     //E7E7E7
-    //"#EEEEEE"
     backgroundColor: Platform.OS === "ios" ? "#EEEEEE" : "#fff",
     paddingHorizontal: 14,
     paddingVertical: Platform.OS === "ios" ? 7 : 4,

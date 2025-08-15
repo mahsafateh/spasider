@@ -5,7 +5,6 @@ import {
   TouchableOpacity,
   Modal,
   FlatList,
-  StyleSheet,
   Animated,
   Platform,
   Pressable,
@@ -30,27 +29,14 @@ export default function FloatingLabelPicker({
     }).start();
   }, [isFocused, value]);
 
-  const staticLabelStyle = {
-    position: "absolute" as const,
-    left: 10,
-    //EEEEEE
-    backgroundColor: Platform.OS === "ios" ? "#EEEEEE" : "#fff",
-    paddingHorizontal: 14,
-    paddingVertical: Platform.OS === "ios" ? 5 : 0,
-    zIndex: 1,
-    alignSelf: "flex-start" as const,
-    fontFamily: "Quicksand-SemiBold",
-    pointerEvents: "none" as const,
-  };
-
   const animatedLabelStyle = {
     top: animatedIsFocused.interpolate({
       inputRange: [0, 1],
-      outputRange: [26, 6],
+      outputRange: [26, Platform.OS === "ios" ? 6 : 8],
     }),
     fontSize: animatedIsFocused.interpolate({
       inputRange: [0, 1],
-      outputRange: [16, 14],
+      outputRange: [16, Platform.OS === "ios" ? 14 : 15],
     }),
     color: animatedIsFocused.interpolate({
       inputRange: [0, 1],
@@ -60,25 +46,30 @@ export default function FloatingLabelPicker({
 
   return (
     <Pressable
-      style={{ marginBottom: 16, paddingTop: 18 }}
+      className={"mb-4 pt-[18px]"}
       onPress={() => {
         setModalVisible(true);
         setIsFocused(true);
       }}
     >
-      <Animated.Text style={[staticLabelStyle, animatedLabelStyle]}>
+      <Animated.Text
+        className={
+          "absolute left-[10px] ios:bg-[#EEEEEE] android:bg-white px-[14px] ios:py-[7px] android:py-[4px] z-10 self-start font-quicksand-semibold pointer-events-none leading-[18px]"
+        }
+        style={[animatedLabelStyle]}
+      >
         {label}
       </Animated.Text>
-      <View style={styles.input}>
+      <View
+        className={
+          "h-11 justify-center bg-transparent rounded-lg border border-black px-[10px] w-full items-start min-h-[44px]"
+        }
+      >
         <Text
-          className={"font-quicksand-semibold"}
-          style={{
-            color: value ? "#222" : "#aaa",
-            fontSize: 16,
-            textAlign: "left",
-            paddingLeft: 8,
-            flex: 1,
-          }}
+          className={
+            "font-quicksand-semibold text-left pl-2 flex-1 text-base pt-4"
+          }
+          style={{ color: value ? "#222" : "#aaa" }}
         >
           {value || ""}
         </Text>
@@ -93,31 +84,30 @@ export default function FloatingLabelPicker({
         }}
       >
         <TouchableOpacity
-          style={styles.modalOverlay}
+          className={"flex-1 bg-black/20 justify-center items-center"}
           onPress={() => {
             setModalVisible(false);
             setIsFocused(false);
           }}
           activeOpacity={1}
         >
-          <View style={styles.modalContent}>
+          <View
+            className={"bg-white rounded-xl p-4 min-w-[250px] max-h-[500px]"}
+          >
             <FlatList
               className={"font-quicksand-semibold"}
               data={categories}
               keyExtractor={(item) => item.id}
               renderItem={({ item }) => (
                 <TouchableOpacity
-                  style={styles.item}
+                  className={"py-3 px-2 w-full"}
                   onPress={() => {
                     onValueChange(item.name);
                     setModalVisible(false);
                     setIsFocused(false);
                   }}
                 >
-                  <Text
-                    className={"font-quicksand-semibold"}
-                    style={{ fontSize: 16 }}
-                  >
+                  <Text className={"font-quicksand-semibold text-base"}>
                     {item.name}
                   </Text>
                 </TouchableOpacity>
@@ -129,37 +119,3 @@ export default function FloatingLabelPicker({
     </Pressable>
   );
 }
-
-const styles = StyleSheet.create({
-  input: {
-    height: 44,
-    justifyContent: "center",
-    backgroundColor: "transparent",
-    borderRadius: 8,
-    borderStyle: "solid",
-    borderColor: "black",
-    borderWidth: 1,
-    paddingHorizontal: 10,
-    width: "100%",
-    alignItems: "flex-start",
-    minHeight: 44,
-  },
-  modalOverlay: {
-    flex: 1,
-    backgroundColor: "rgba(0,0,0,0.2)",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  modalContent: {
-    backgroundColor: "#fff",
-    borderRadius: 12,
-    padding: 16,
-    minWidth: 250,
-    maxHeight: 500,
-  },
-  item: {
-    paddingVertical: 12,
-    paddingHorizontal: 8,
-    width: "100%",
-  },
-});
