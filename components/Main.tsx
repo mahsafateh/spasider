@@ -1,4 +1,4 @@
-import { View, Keyboard, ScrollView, Platform } from "react-native";
+import { View, Keyboard, ScrollView, Platform, Alert } from "react-native";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { startGame, fetchWord } from "@/store/gameSlice";
@@ -58,7 +58,15 @@ function Main() {
         title={"Start 🎲"}
         onPress={() => {
           Keyboard.dismiss();
-          if (!selectedCategory || !spyInputValue || !insiderInputValue) return;
+          if (!selectedCategory || !spyInputValue || !insiderInputValue)
+            return Alert.alert("Empty Input!", "Fill all inputs, try again", [
+              {
+                text: "Cancel",
+                onPress: () => console.log("Cancel Pressed"),
+                style: "cancel",
+              },
+              { text: "OK", onPress: () => console.log("OK Pressed") },
+            ]);
           const spies = parseInt(spyInputValue, 10);
           const insiders = parseInt(insiderInputValue, 10);
           dispatch(startGame({ category: selectedCategory, spies, insiders }));
