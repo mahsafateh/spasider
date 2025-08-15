@@ -9,6 +9,7 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
+      "bundleIdentifier": "com.spasider",
       "supportsTablet": true
     },
     "android": {
@@ -16,7 +17,8 @@
         "foregroundImage": "./assets/images/Spasider.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "permissions": []    
     },
     "web": {
       "bundler": "metro",
@@ -37,6 +39,8 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "updates": { "enabled": true }
   }
+  
 }
