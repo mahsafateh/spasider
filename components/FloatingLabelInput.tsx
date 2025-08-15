@@ -21,28 +21,26 @@ export default function FloatingLabelInput({
 
   const staticLabelStyle = {
     position: "absolute" as const,
-    left: 18,
+    left: 10,
     //E7E7E7
+    //"#EEEEEE"
     backgroundColor: Platform.OS === "ios" ? "#EEEEEE" : "#fff",
     paddingHorizontal: 14,
-    paddingVertical: 2,
+    paddingVertical: Platform.OS === "ios" ? 7 : 4,
     zIndex: 1,
     alignSelf: "flex-start" as const,
     fontFamily: "Quicksand-SemiBold",
     pointerEvents: "none" as const,
     lineHeight: 18,
-    // Platform-specific tweaks
-    top: Platform.OS === "ios" ? 6 : 8,
-    fontSize: Platform.OS === "ios" ? 14 : 15,
   };
   const animatedLabelStyle = {
     top: animatedIsFocused.interpolate({
       inputRange: [0, 1],
-      outputRange: [26, 6],
+      outputRange: [26, Platform.OS === "ios" ? 6 : 8],
     }),
     fontSize: animatedIsFocused.interpolate({
       inputRange: [0, 1],
-      outputRange: [16, 14],
+      outputRange: [16, Platform.OS === "ios" ? 14 : 15],
     }),
     color: animatedIsFocused.interpolate({
       inputRange: [0, 1],
@@ -64,6 +62,10 @@ export default function FloatingLabelInput({
         onBlur={() => setIsFocused(false)}
         maxLength={2}
         blurOnSubmit
+        style={{
+          paddingLeft: 8,
+          fontSize: 16,
+        }}
         {...props}
       />
     </View>

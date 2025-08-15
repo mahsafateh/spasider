@@ -8,6 +8,7 @@ import {
   StyleSheet,
   Animated,
   Platform,
+  Pressable,
 } from "react-native";
 import { categories } from "@/constants";
 import { FloatingLabelPickerProps } from "@/types";
@@ -31,10 +32,11 @@ export default function FloatingLabelPicker({
 
   const staticLabelStyle = {
     position: "absolute" as const,
-    left: 18,
+    left: 10,
+    //EEEEEE
     backgroundColor: Platform.OS === "ios" ? "#EEEEEE" : "#fff",
     paddingHorizontal: 14,
-    paddingVertical: 2,
+    paddingVertical: Platform.OS === "ios" ? 5 : 0,
     zIndex: 1,
     alignSelf: "flex-start" as const,
     fontFamily: "Quicksand-SemiBold",
@@ -57,25 +59,30 @@ export default function FloatingLabelPicker({
   };
 
   return (
-    <View style={{ marginBottom: 16, paddingTop: 18 }}>
+    <Pressable
+      style={{ marginBottom: 16, paddingTop: 18 }}
+      onPress={() => {
+        setModalVisible(true);
+        setIsFocused(true);
+      }}
+    >
       <Animated.Text style={[staticLabelStyle, animatedLabelStyle]}>
         {label}
       </Animated.Text>
-      <TouchableOpacity
-        style={styles.input}
-        onPress={() => {
-          setModalVisible(true);
-          setIsFocused(true);
-        }}
-        activeOpacity={0.8}
-      >
+      <View style={styles.input}>
         <Text
           className={"font-quicksand-semibold"}
-          style={{ color: value ? "#222" : "#aaa", fontSize: 16 }}
+          style={{
+            color: value ? "#222" : "#aaa",
+            fontSize: 16,
+            textAlign: "left",
+            paddingLeft: 8,
+            flex: 1,
+          }}
         >
           {value || ""}
         </Text>
-      </TouchableOpacity>
+      </View>
       <Modal
         visible={modalVisible}
         transparent
@@ -119,7 +126,7 @@ export default function FloatingLabelPicker({
           </View>
         </TouchableOpacity>
       </Modal>
-    </View>
+    </Pressable>
   );
 }
 
@@ -133,6 +140,9 @@ const styles = StyleSheet.create({
     borderColor: "black",
     borderWidth: 1,
     paddingHorizontal: 10,
+    width: "100%",
+    alignItems: "flex-start",
+    minHeight: 44,
   },
   modalOverlay: {
     flex: 1,
@@ -150,5 +160,6 @@ const styles = StyleSheet.create({
   item: {
     paddingVertical: 12,
     paddingHorizontal: 8,
+    width: "100%",
   },
 });
