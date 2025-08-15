@@ -16,15 +16,15 @@ export default function Index() {
     <KeyboardAvoidingView className="flex-1 font-quicksand">
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
         <ImageBackground
-          source={require("../../assets/images/spy.jpg")}
+          source={require("../../assets/images/spy.png")}
           resizeMode="cover"
           style={{ flex: 1 }}
-          imageStyle={{ opacity: 0.7 }}
+          imageStyle={{ opacity: 0.9 }}
         >
           <SafeAreaView className={"flex-1"}>
             <View
               className={
-                "flex-1 justify-between font-quicksand-semibold opacity-[0.9]"
+                "flex-1 justify-between font-quicksand-semibold ios:opacity-[0.95]"
               }
             >
               <View
