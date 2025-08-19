@@ -42,3 +42,5 @@ app-example
 .cursor
 .idea
 .env
+
+eas.json

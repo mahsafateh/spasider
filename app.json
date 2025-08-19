@@ -18,7 +18,8 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "permissions": []    
+      "permissions": [],
+      "package": "com.spasider"
     },
     "web": {
       "bundler": "metro",
@@ -40,7 +41,15 @@
     "experiments": {
       "typedRoutes": true
     },
-    "updates": { "enabled": true }
+    "updates": {
+      "enabled": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "8f209eff-58c8-49af-9533-911a97abcca3"
+      }
+    },
+    "owner": "mahsafa"
   }
-  
 }
