@@ -9,6 +9,8 @@ export interface FloatingLabelInputProps extends TextInputProps {
   label: string;
   value?: string;
   onChangeText: (text: string) => void;
+  /** Minimum numeric value allowed. Defaults to 1 for numeric inputs. */
+  minValue?: number;
 }
 
 export interface FloatingLabelPickerProps extends TextInputProps {
@@ -31,7 +33,7 @@ export interface GameState {
   insiders: number;
   word: string;
   gameStarted: boolean;
-  roles: Array<"spy" | "insider">;
+  roles: ("spy" | "insider")[];
   currentRole: "spy" | "insider" | null;
   showWord: boolean;
   loading: boolean;
