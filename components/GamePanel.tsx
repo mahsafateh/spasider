@@ -62,7 +62,7 @@ const GamePanel = () => {
               {showWord ? (
                 <>
                   <Text className="text-2xl font-quicksand-semibold">
-                    {currentRole === "insider" ? word : "SPY"}
+                    {currentRole === "insider" ? word : "جاسوس"}
                   </Text>
                   <Text className="mt-2 font-quicksand-semibold text-gray-500">
                     ({currentRole?.toUpperCase()})

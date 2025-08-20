@@ -32,11 +32,11 @@ export default function FloatingLabelPicker({
   const animatedLabelStyle = {
     top: animatedIsFocused.interpolate({
       inputRange: [0, 1],
-      outputRange: [26, Platform.OS === "ios" ? 6 : 8],
+      outputRange: [26, Platform.OS === "ios" ? 1 : 4],
     }),
     fontSize: animatedIsFocused.interpolate({
       inputRange: [0, 1],
-      outputRange: [16, Platform.OS === "ios" ? 14 : 15],
+      outputRange: [16, Platform.OS === "ios" ? 16 : 15],
     }),
     color: animatedIsFocused.interpolate({
       inputRange: [0, 1],
@@ -54,7 +54,7 @@ export default function FloatingLabelPicker({
     >
       <Animated.Text
         className={
-          "absolute left-[10px] ios:bg-[#EEEEEE] android:bg-white px-[14px] ios:py-[7px] android:py-[4px] z-10 self-start font-quicksand-semibold pointer-events-none leading-[18px]"
+          "absolute left-[10px] ios:bg-[#EEEEEE] android:bg-white px-[8px] ios:py-[7px] android:py-[4px] z-10 self-start font-quicksand-semibold pointer-events-none leading-[18px]"
         }
         style={[animatedLabelStyle]}
       >
@@ -66,9 +66,7 @@ export default function FloatingLabelPicker({
         }
       >
         <Text
-          className={
-            "font-quicksand-semibold text-left pl-2 flex-1 text-base pt-4"
-          }
+          className={"font-quicksand-semibold text-left flex-1 text-base pt-3"}
           style={{ color: value ? "#222" : "#aaa" }}
         >
           {value || ""}
@@ -107,7 +105,7 @@ export default function FloatingLabelPicker({
                     setIsFocused(false);
                   }}
                 >
-                  <Text className={"font-quicksand-semibold text-base"}>
+                  <Text className={"font-quicksand-semibold text-base p-[0.5]"}>
                     {item.name}
                   </Text>
                 </TouchableOpacity>

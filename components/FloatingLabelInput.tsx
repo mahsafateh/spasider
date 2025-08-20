@@ -32,8 +32,8 @@ export default function FloatingLabelInput({
     left: 10,
     //E7E7E7
     backgroundColor: Platform.OS === "ios" ? "#EEEEEE" : "#fff",
-    paddingHorizontal: 14,
-    paddingVertical: Platform.OS === "ios" ? 7 : 4,
+    paddingHorizontal: Platform.OS === "ios" ? 5 : 8,
+    paddingVertical: Platform.OS === "ios" ? 6 : 4,
     zIndex: 1,
     alignSelf: "flex-start" as const,
     fontFamily: "Quicksand-SemiBold",
@@ -43,11 +43,11 @@ export default function FloatingLabelInput({
   const animatedLabelStyle = {
     top: animatedIsFocused.interpolate({
       inputRange: [0, 1],
-      outputRange: [26, Platform.OS === "ios" ? 6 : 8],
+      outputRange: [26, Platform.OS === "ios" ? 3 : 6],
     }),
     fontSize: animatedIsFocused.interpolate({
       inputRange: [0, 1],
-      outputRange: [16, Platform.OS === "ios" ? 14 : 15],
+      outputRange: [16, Platform.OS === "ios" ? 16 : 15],
     }),
     color: animatedIsFocused.interpolate({
       inputRange: [0, 1],
