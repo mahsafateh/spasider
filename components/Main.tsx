@@ -2,7 +2,7 @@ import { View, Keyboard, ScrollView, Platform, Alert } from "react-native";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { startGame, fetchWord } from "@/store/gameSlice";
-import type { AppDispatch } from "@/store";
+import type { AppDispatch, RootState } from "@/store";
 import FloatingLabelInput from "./FloatingLabelInput";
 import FloatingLabelPicker from "@/components/FloatingLabelPicker";
 import PrimaryButton from "./PrimaryButton";
@@ -12,7 +12,8 @@ function Main() {
   const [spyInputValue, setSpyInputValue] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const dispatch = useDispatch<AppDispatch>();
-  const gameStarted = useSelector((state: any) => state.game.gameStarted);
+  const gameStarted = useSelector((state: RootState) => state.game.gameStarted);
+  const loading = useSelector((state: RootState) => state.game.loading);
 
   useEffect(() => {
     if (!gameStarted) {
@@ -46,16 +47,19 @@ function Main() {
           label="Spies"
           value={spyInputValue}
           onChangeText={setSpyInputValue}
+          minValue={1}
         />
 
         <FloatingLabelInput
           label="Insiders"
           value={insiderInputValue}
           onChangeText={setInsiderInputValue}
+          minValue={1}
         />
       </View>
       <PrimaryButton
         title={"Start 🎲"}
+        disabled={loading || gameStarted}
         onPress={() => {
           Keyboard.dismiss();
           if (!selectedCategory || !spyInputValue || !insiderInputValue)
