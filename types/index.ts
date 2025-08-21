@@ -25,6 +25,7 @@ export interface ButtonProps {
   style?: ViewStyle;
   textStyle?: TextStyle;
   disabled?: boolean;
+  className?: string;
 }
 
 export interface GameState {
@@ -38,4 +39,15 @@ export interface GameState {
   showWord: boolean;
   loading: boolean;
   error: string | null;
+}
+
+export interface GameResultsModalProps {
+  visible: boolean;
+  onClose: () => void;
+  gameData: {
+    insiders: number;
+    spies: number;
+    totalPlayers: number;
+    playersLeft: number;
+  };
 }
