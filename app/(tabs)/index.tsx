@@ -9,7 +9,6 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import Title from "@/components/Title";
 import Main from "@/components/Main";
-import GamePanel from "@/components/GamePanel";
 
 export default function Index() {
   return (
@@ -42,7 +41,6 @@ export default function Index() {
               >
                 <Title title={"Spy & Insider"} />
                 <Main />
-                <GamePanel />
               </View>
             </View>
           </SafeAreaView>

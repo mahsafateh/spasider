@@ -25,6 +25,7 @@ export interface ButtonProps {
   style?: ViewStyle;
   textStyle?: TextStyle;
   disabled?: boolean;
+  className?: string;
 }
 
 export interface GameState {

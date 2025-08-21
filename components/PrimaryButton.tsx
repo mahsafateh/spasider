@@ -1,6 +1,5 @@
 import React from "react";
-import { useState } from "react";
-import { TouchableOpacity, Text, StyleSheet } from "react-native";
+import { TouchableOpacity, Text } from "react-native";
 import { ButtonProps } from "@/types";
 
 const PrimaryButton: React.FC<ButtonProps> = ({
@@ -9,40 +8,23 @@ const PrimaryButton: React.FC<ButtonProps> = ({
   style,
   textStyle,
   disabled = false,
+  className,
 }) => {
-  const [isLoading, setIsLoading] = useState(false);
   return (
     <TouchableOpacity
-      style={[styles.button, style, disabled && styles.disabled]}
+      style={style}
       onPress={onPress}
       activeOpacity={0.7}
       disabled={disabled}
-      className="mb-2"
+      className={`py-3 px-6 rounded-lg items-center justify-center mb-2 ${
+        disabled ? "bg-gray-400" : ""
+      } ${className ?? ""}`}
     >
-      <Text style={[styles.text, textStyle]}>
+      <Text className="text-white text-base font-semibold" style={textStyle}>
         {title}
       </Text>
     </TouchableOpacity>
   );
 };
-
-const styles = StyleSheet.create({
-  button: {
-    backgroundColor: "#FFB823",
-    paddingVertical: 12,
-    paddingHorizontal: 24,
-    borderRadius: 8,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  text: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "600",
-  },
-  disabled: {
-    backgroundColor: "#A9A9A9",
-  },
-});
 
 export default PrimaryButton;
