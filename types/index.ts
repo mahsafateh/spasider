@@ -40,3 +40,14 @@ export interface GameState {
   loading: boolean;
   error: string | null;
 }
+
+export interface GameResultsModalProps {
+  visible: boolean;
+  onClose: () => void;
+  gameData: {
+    insiders: number;
+    spies: number;
+    totalPlayers: number;
+    playersLeft: number;
+  };
+}

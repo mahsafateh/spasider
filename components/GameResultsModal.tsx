@@ -13,18 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store";
 import { showRole, hideRole, resetGame } from "@/store/gameSlice";
 import PrimaryButton from "./PrimaryButton";
-
-// this should go to types file
-interface GameResultsModalProps {
-  visible: boolean;
-  onClose: () => void;
-  gameData: {
-    insiders: number;
-    spies: number;
-    totalPlayers: number;
-    playersLeft: number;
-  };
-}
+import { GameResultsModalProps } from "@/types/index";
 
 const WORD_BOX_HEIGHT = 60;
 
