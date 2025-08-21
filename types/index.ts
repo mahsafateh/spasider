@@ -20,6 +20,7 @@ export interface FloatingLabelPickerProps extends TextInputProps {
 }
 
 export interface ButtonProps {
+  iconName?: string;
   title?: string;
   onPress: (event: GestureResponderEvent) => void;
   style?: ViewStyle;
