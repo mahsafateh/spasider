@@ -6,11 +6,15 @@ import {
   ImageBackground,
   Platform,
 } from "react-native";
+import { useDispatch } from "react-redux";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Title from "@/components/Title";
 import Main from "@/components/Main";
+import ResetButton from "@/components/ResetButton";
+import { resetGame } from "@/store/gameSlice";
 
 export default function Index() {
+  const dispatch = useDispatch();
   return (
     <KeyboardAvoidingView className="flex-1 font-quicksand">
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
@@ -29,17 +33,24 @@ export default function Index() {
               <View
                 style={{
                   backgroundColor: Platform.OS === "ios" ? "#EEEEEE" : "#fff",
-                  // iOS shadow
                   shadowColor: "#000",
                   shadowOffset: { width: 0, height: 4 },
                   shadowOpacity: 0.1,
                   shadowRadius: 20,
-                  // Android shadow
                   elevation: 30,
                 }}
                 className={" rounded-2xl shadow-lg p-2 m-4"}
               >
-                <Title title={"Spy & Insider"} />
+                <View className="relative h-12 justify-center">
+                  <View className="absolute left-0 right-0 items-center">
+                    <Title title={"Spy & Insider"} />
+                  </View>
+                  <ResetButton
+                    iconName="restart"
+                    onPress={() => dispatch(resetGame())}
+                    className="absolute right-2 top-1 py-2 px-2 mb-0"
+                  />
+                </View>
                 <Main />
               </View>
             </View>
