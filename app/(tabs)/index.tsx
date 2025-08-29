@@ -6,15 +6,24 @@ import {
   ImageBackground,
   Platform,
 } from "react-native";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Title from "@/components/Title";
 import Main from "@/components/Main";
 import ResetButton from "@/components/ResetButton";
 import { resetGame } from "@/store/gameSlice";
+import { persistor } from "@/store/index";
 
 export default function Index() {
+  const [resetKey, setResetKey] = useState(0);
   const dispatch = useDispatch();
+
+  const onReset = async () => {
+    dispatch(resetGame());
+    await persistor.purge();
+    setResetKey((k) => k + 1);
+  };
   return (
     <KeyboardAvoidingView className="flex-1 font-quicksand">
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
@@ -47,11 +56,11 @@ export default function Index() {
                   </View>
                   <ResetButton
                     iconName="restart"
-                    onPress={() => dispatch(resetGame())}
                     className="absolute right-2 top-1 py-2 px-2 mb-0"
+                    onPress={onReset}
                   />
                 </View>
-                <Main />
+                <Main key={resetKey} />
               </View>
             </View>
           </SafeAreaView>
