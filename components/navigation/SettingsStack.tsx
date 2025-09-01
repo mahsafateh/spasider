@@ -1,6 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
-import SettingsIndex from "./index";
+import SettingsIndex from "../../app/(tabs)/settings/index";
 import AboutScreen from "@/screens/settingScreens/AboutScreen";
 import LanguageScreen from "@/screens/settingScreens/LanguageScreen";
 import ThemeScreen from "@/screens/settingScreens/ThemeScreen";
