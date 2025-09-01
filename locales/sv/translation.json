@@ -1,0 +1,28 @@
+{
+  "home": {
+    "title": "Spion & Insider",
+    "category": "Kategory",
+    "spies": "Spioner",
+    "insiders": "Insiders",
+    "start": "Start 🎲",
+    "gameResults": "Spelresultat",
+    "gameResultsModal": {
+      "title": "Spelresultat"
+    }
+  },
+  "settings":{
+    "title": "Inställningar",
+    "language": "Språk",
+    "theme": "Tema",
+    "about": "Om",
+    "softwareUpdates": "Programuppdateringar"
+  },
+  "profile": {
+    "title": "Profil",
+    "name": "Namn",
+    "email": "e-post",
+    "country": "Land",
+    "save": "Spara",
+    "cancel": "Avbryt"
+  }
+}
