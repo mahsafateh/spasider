@@ -19,7 +19,7 @@ export const fetchWord = createAsyncThunk(
   "game/fetchWord",
   async (categoryName: string, { rejectWithValue }) => {
     try {
-      const words = category.mixedCategory || ["Random"];
+      const words: string[] = (category as any).mixedCategory || ["Random"];
       const randomWord = words[Math.floor(Math.random() * words.length)];
       return randomWord;
     } catch (error: any) {
@@ -28,9 +28,9 @@ export const fetchWord = createAsyncThunk(
   },
 );
 
-const shuffle = (array: any[]) => {
+const shuffle = <T>(array: T[]) => {
   let currentIndex = array.length,
-    randomIndex;
+    randomIndex: number;
   while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
@@ -71,8 +71,8 @@ const gameSlice = createSlice({
     showRole(state) {
       if (state.roles.length > 0) {
         const [role, ...rest] = state.roles;
-        state.currentRole = role;
-        state.roles = rest;
+        state.currentRole = role as any;
+        state.roles = rest as any;
         state.showWord = true;
       } else {
         state.currentRole = null;
@@ -94,13 +94,13 @@ const gameSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchWord.fulfilled, (state, action) => {
-        state.word = action.payload;
+        state.word = action.payload as string;
         state.gameStarted = true;
         state.loading = false;
       })
       .addCase(fetchWord.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.payload as string;
+        state.error = (action.payload as string) ?? "Failed to fetch word";
       });
   },
 });

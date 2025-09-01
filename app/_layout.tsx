@@ -3,13 +3,13 @@ import "./global.css";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
 import { Provider } from "react-redux";
-import store from "../store";
+import { store } from "@/store/index";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import Profile from "./(tabs)/Profile";
 import SettingsStack from "./(tabs)/settings/SettingsStack";
-import Index from "@/app/(tabs)";
+import Index from "./(tabs)/index";
 
 const Tab = createBottomTabNavigator();
 

@@ -8,6 +8,9 @@ module.exports = function (api) {
       "nativewind/babel",
     ],
 
-    plugins,
+    plugins: [
+      ...plugins,
+      "react-native-reanimated/plugin", // must be last
+    ],
   };
 };

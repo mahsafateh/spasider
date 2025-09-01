@@ -8,12 +8,20 @@ import FloatingLabelPicker from "@/components/FloatingLabelPicker";
 import PrimaryButton from "@/components/PrimaryButton";
 import GameResultsModal from "@/components/GameResultsModal";
 
+type GameData = {
+  insiders: number;
+  spies: number;
+  totalPlayers: number;
+  playersLeft: number;
+  playedWords: string[];
+};
+
 function Main() {
   const [insiderInputValue, setInsiderInputValue] = useState("");
   const [spyInputValue, setSpyInputValue] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [showResultsModal, setShowResultsModal] = useState(false);
-  const [gameData, setGameData] = useState(null);
+  const [gameData, setGameData] = useState<GameData | null>(null);
 
   const dispatch = useDispatch<AppDispatch>();
   const gameStarted = useSelector((state: RootState) => state.game.gameStarted);
@@ -45,11 +53,12 @@ function Main() {
     const spies = parseInt(spyInputValue, 10);
     const insiders = parseInt(insiderInputValue, 10);
 
-    const modalGameData = {
+    const modalGameData: GameData = {
       insiders,
       spies,
       totalPlayers: insiders + spies,
       playersLeft: insiders + spies,
+      playedWords: [],
     };
 
     setGameData(modalGameData);
