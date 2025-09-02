@@ -7,6 +7,7 @@ import FloatingLabelInput from "@/components/FloatingLabelInput";
 import FloatingLabelPicker from "@/components/FloatingLabelPicker";
 import PrimaryButton from "@/components/PrimaryButton";
 import GameResultsModal from "@/components/GameResultsModal";
+import { categories } from "@/constants";
 
 import i18next from "i18next";
 
@@ -89,6 +90,7 @@ function Main() {
             label={i18next.t("home.category")}
             value={selectedCategory}
             onValueChange={setSelectedCategory}
+            viewList={categories}
           />
 
           <FloatingLabelInput

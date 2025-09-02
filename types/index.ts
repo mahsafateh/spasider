@@ -9,7 +9,6 @@ export interface FloatingLabelInputProps extends TextInputProps {
   label: string;
   value?: string;
   onChangeText: (text: string) => void;
-  /** Minimum numeric value allowed. Defaults to 1 for numeric inputs. */
   minValue?: number;
 }
 
@@ -17,6 +16,13 @@ export interface FloatingLabelPickerProps extends TextInputProps {
   label?: string;
   value?: string;
   onValueChange: (text: string) => void;
+  viewList: Categories[];
+}
+
+export interface Categories {
+  name: string;
+  words: string[];
+  id: string;
 }
 
 export interface ButtonProps {

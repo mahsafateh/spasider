@@ -9,13 +9,13 @@ import {
   Platform,
   Pressable,
 } from "react-native";
-import { categories } from "@/constants";
 import { FloatingLabelPickerProps } from "@/types";
 
 export default function FloatingLabelPicker({
   label,
   value,
   onValueChange,
+  viewList,
 }: FloatingLabelPickerProps) {
   const [isFocused, setIsFocused] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
@@ -94,7 +94,7 @@ export default function FloatingLabelPicker({
           >
             <FlatList
               className={"font-quicksand-semibold"}
-              data={categories}
+              data={viewList}
               keyExtractor={(item) => item.id}
               renderItem={({ item }) => (
                 <TouchableOpacity
