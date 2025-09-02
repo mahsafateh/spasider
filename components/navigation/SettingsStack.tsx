@@ -6,6 +6,8 @@ import LanguageScreen from "@/screens/settingScreens/LanguageScreen";
 import ThemeScreen from "@/screens/settingScreens/ThemeScreen";
 import SoftwareUpdatesScreen from "@/screens/settingScreens/SoftwareUpdatesScreen";
 
+import i18next from "i18next";
+
 const Stack = createStackNavigator();
 
 export default function SettingsStack() {
@@ -26,28 +28,28 @@ export default function SettingsStack() {
         name="About"
         component={AboutScreen}
         options={{
-          title: "About",
+          title: i18next.t("settings.about"),
         }}
       />
       <Stack.Screen
         name="Language"
         component={LanguageScreen}
         options={{
-          title: "Language",
+          title: i18next.t("settings.language"),
         }}
       />
       <Stack.Screen
         name="Theme"
         component={ThemeScreen}
         options={{
-          title: "Theme",
+          title: i18next.t("settings.theme"),
         }}
       />
       <Stack.Screen
         name="SoftwareUpdates"
         component={SoftwareUpdatesScreen}
         options={{
-          title: "Software Updates",
+          title: i18next.t("settings.softwareUpdates"),
         }}
       />
     </Stack.Navigator>
