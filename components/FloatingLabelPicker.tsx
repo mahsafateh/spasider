@@ -90,7 +90,7 @@ export default function FloatingLabelPicker({
           activeOpacity={1}
         >
           <View
-            className={"bg-white rounded-xl p-4 min-w-[250px] max-h-[500px]"}
+            className={"bg-white rounded-xl p-4 min-w-[250px] max-h-[450px]"}
           >
             <FlatList
               className={"font-quicksand-semibold"}
@@ -105,9 +105,14 @@ export default function FloatingLabelPicker({
                     setIsFocused(false);
                   }}
                 >
-                  <Text className={"font-quicksand-semibold text-base p-[0.5]"}>
+                  <Text
+                    className={
+                      "self-center font-quicksand-semibold text-base p-[0.5]"
+                    }
+                  >
                     {item.name}
                   </Text>
+                  <View className="bg-gray-300 w-full h-[0.5]"></View>
                 </TouchableOpacity>
               )}
             />
