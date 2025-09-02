@@ -11,7 +11,8 @@
       "totalPlayers": "Totalt antal Spelare",
       "playersLeft": "Spelare kvar",
       "show": "Visa",
-      "hide": "Dölja"
+      "hide": "Dölja",
+      "resetGame": "Återställ spelet"
     },
     "categories": {
     "fruitAndVegetables": "Frukt och grönsaker",

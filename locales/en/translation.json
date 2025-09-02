@@ -11,7 +11,8 @@
       "totalPlayers": "Total Players",
       "playersLeft": "Players Left",
       "hide":"Hide",
-      "show": "Show"
+      "show": "Show",
+      "resetGame": "Reset Game"
     },
     "categories": {
     "fruitAndVegetables": "Fruit and Vegetables",

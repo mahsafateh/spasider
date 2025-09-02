@@ -113,7 +113,7 @@ const GameResultsModal: React.FC<GameResultsModalProps> = ({
                           <Text className="text-2xl font-quicksand-semibold">
                             {currentRole === `${i18next.t("home.insiders")}`
                               ? word
-                              : `${i18next.t("home.spies")}`}
+                              : word}
                           </Text>
                           <Text className="mt-2 font-quicksand-semibold text-gray-500">
                             ({currentRole?.toUpperCase()})
@@ -145,7 +145,7 @@ const GameResultsModal: React.FC<GameResultsModalProps> = ({
                         roles.length === 0 &&
                         !showWord && (
                           <PrimaryButton
-                            title="Reset Game"
+                            title={i18next.t("home.gameResultsModal.resetGame")}
                             className="bg-red-500"
                             onPress={() => dispatch(resetGame())}
                           />
