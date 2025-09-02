@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
-import category from "@/data/persion-words.json";
+import { categories } from "@/constants/index";
 import { GameState } from "@/types";
 
 const initialState: GameState = {
@@ -19,8 +19,10 @@ export const fetchWord = createAsyncThunk(
   "game/fetchWord",
   async (categoryName: string, { rejectWithValue }) => {
     try {
-      const words: string[] = (category as any).mixedCategory || ["Random"];
-      const randomWord = words[Math.floor(Math.random() * words.length)];
+      const category = categories.find((c) => c.name === categoryName);
+      const words: string[] = category?.words ?? [];
+      const pool = words.length > 0 ? words : ["Random"];
+      const randomWord = pool[Math.floor(Math.random() * pool.length)];
       return randomWord;
     } catch (error: any) {
       return rejectWithValue(error.message);

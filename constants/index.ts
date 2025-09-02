@@ -1,4 +1,6 @@
-import i18next from "i18next";
+// Ensure i18n is initialized before using translation keys here
+import "@/lib/i18n";
+import i18next, { t } from "i18next";
 export const categories = [
   {
     name: i18next.t("home.categories.sport"),
@@ -99,7 +101,7 @@ export const categories = [
   },
 
   {
-    name: i18next.t("home.categories.movieAndSeirial"),
+    name: i18next.t("home.categories.movieAndSerial"),
     words: [
       "Titanic",
       "Avatar",

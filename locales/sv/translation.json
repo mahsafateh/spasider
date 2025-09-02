@@ -8,6 +8,18 @@
     "gameResults": "Spelresultat",
     "gameResultsModal": {
       "title": "Spelresultat"
+    },
+    "categories": {
+    "fruitAndVegetables": "Frukt och grönsaker",
+    "landmark": "Landmärke",
+    "animal": "Djur",
+    "cityAndCountry": "Stad och land",
+    "movieAndSerial": "Film och Serie",
+    "foodAndCuisine": "Mat och kök",
+    "sport": "Sport",
+    "things": "Saker",
+    "profession":"Yrke",
+    "mixedCategory":"Blandad kategori"
     }
   },
   "settings":{

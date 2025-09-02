@@ -6,7 +6,7 @@ import fa from "@/locales/fa/translation.json";
 import sv from "@/locales/sv/translation.json";
 
 i18n.use(initReactI18next).init({
-  lng: "fa",
+  lng: "sv",
   fallbackLng: "en",
   resources: {
     en: { translation: en },
