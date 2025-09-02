@@ -9,13 +9,13 @@ import {
   Platform,
   Pressable,
 } from "react-native";
-import { categories } from "@/constants";
 import { FloatingLabelPickerProps } from "@/types";
 
 export default function FloatingLabelPicker({
   label,
   value,
   onValueChange,
+  viewList,
 }: FloatingLabelPickerProps) {
   const [isFocused, setIsFocused] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
@@ -90,22 +90,30 @@ export default function FloatingLabelPicker({
           activeOpacity={1}
         >
           <View
-            className={"bg-white rounded-xl p-4 min-w-[250px] max-h-[500px]"}
+            className={"bg-white rounded-xl p-4 min-w-[250px] max-h-[450px]"}
           >
             <FlatList
               className={"font-quicksand-semibold"}
-              data={categories}
+              data={viewList}
               keyExtractor={(item) => item.id}
+              ItemSeparatorComponent={() => (
+                <View className="self-center bg-gray-300 w-[85%] h-[0.5]" />
+              )}
+              showsVerticalScrollIndicator={false}
               renderItem={({ item }) => (
                 <TouchableOpacity
-                  className={"py-3 px-2 w-full"}
+                  className={"py-3 px-2 w-full items-center"}
                   onPress={() => {
                     onValueChange(item.name);
                     setModalVisible(false);
                     setIsFocused(false);
                   }}
                 >
-                  <Text className={"font-quicksand-semibold text-base p-[0.5]"}>
+                  <Text
+                    className={
+                      "font-quicksand-semibold text-base p-[0.5] text-center"
+                    }
+                  >
                     {item.name}
                   </Text>
                 </TouchableOpacity>

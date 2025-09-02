@@ -15,7 +15,10 @@ import ResetButton from "@/components/ResetButton";
 import { resetGame } from "@/store/gameSlice";
 import { persistor } from "@/store/index";
 
+import { useTranslation } from "react-i18next";
+
 export default function Index() {
+  const { t } = useTranslation();
   const [resetKey, setResetKey] = useState(0);
   const dispatch = useDispatch();
 
@@ -52,7 +55,7 @@ export default function Index() {
               >
                 <View className="relative h-12 justify-center">
                   <View className="absolute left-0 right-0 items-center">
-                    <Title title={"Spy & Insider"} />
+                    <Title title={t("home.gameTitle")} />
                   </View>
                   <ResetButton
                     iconName="restart"

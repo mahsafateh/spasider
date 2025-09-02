@@ -1,5 +1,5 @@
 import { View, Keyboard, ScrollView, Platform, Alert } from "react-native";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { startGame, fetchWord } from "@/store/gameSlice";
 import type { AppDispatch, RootState } from "@/store";
@@ -7,6 +7,8 @@ import FloatingLabelInput from "@/components/FloatingLabelInput";
 import FloatingLabelPicker from "@/components/FloatingLabelPicker";
 import PrimaryButton from "@/components/PrimaryButton";
 import GameResultsModal from "@/components/GameResultsModal";
+import { buildCategories } from "@/constants";
+import { useTranslation } from "react-i18next";
 
 type GameData = {
   insiders: number;
@@ -17,6 +19,7 @@ type GameData = {
 };
 
 function Main() {
+  const { t } = useTranslation();
   const [insiderInputValue, setInsiderInputValue] = useState("");
   const [spyInputValue, setSpyInputValue] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -84,20 +87,21 @@ function Main() {
           style={{ width: "100%", maxWidth: 400, alignSelf: "center" }}
         >
           <FloatingLabelPicker
-            label="Category"
+            label={t("home.category")}
             value={selectedCategory}
             onValueChange={setSelectedCategory}
+            viewList={useMemo(() => buildCategories(t), [t])}
           />
 
           <FloatingLabelInput
-            label="Spies"
+            label={t("home.spies")}
             value={spyInputValue}
             onChangeText={setSpyInputValue}
             minValue={1}
           />
 
           <FloatingLabelInput
-            label="Insiders"
+            label={t("home.insiders")}
             value={insiderInputValue}
             onChangeText={setInsiderInputValue}
             minValue={1}
@@ -105,7 +109,7 @@ function Main() {
         </View>
 
         <PrimaryButton
-          title={"Start 🎲"}
+          title={t("home.start")}
           disabled={loading || gameStarted}
           onPress={handleStart}
           className="bg-[#FFB823]"

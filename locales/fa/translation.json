@@ -1,0 +1,45 @@
+{
+  "home": {
+    "title": "خانه",
+    "gameTitle": "جاسوس",
+    "category": "دسته بندی",
+    "spies": "جاسوس",
+    "insiders": "خودی",
+    "start": "شروع 🎲",
+    "gameResultsModal": {
+      "title": "نتایج بازی",
+      "totalPlayers": "تعداد بازیکن ها",
+      "playersLeft": "یازیکنان باقی مانده",
+      "show": "نمایش",
+      "hide": "مخفی",
+      "resetGame": "بازی مجدد"
+    },
+    "categories": {
+      "fruitAndVegetables": "میوه و سبزی",
+      "landmark": "تاریخی و فرهنگی",
+      "animal": "حیوانات",
+      "cityAndCountry": "شهر و کشور",
+      "movieAndSerial": "فیلم و سریال",
+      "foodAndCuisine": "غذا",
+      "sport": "ورزش",
+      "things": "اشیاء",
+      "profession":"مشاغل",
+      "mixedCategory":"همه‌ دسته‌بندی‌ها"
+      }
+  },
+  "settings":{
+    "title": "تنظیمات",
+    "language": "زبان",
+    "theme": "تم",
+    "about": "درباره‌ی بازی",
+    "softwareUpdates": "به روز رسانی ها"
+  },
+  "profile": {
+    "title": "پروفایل",
+    "name": "نام",
+    "email": "ایمیل",
+    "country": "کشور",
+    "save": "ذخیره",
+    "cancel": "لغو"
+  }
+}

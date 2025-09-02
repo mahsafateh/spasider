@@ -1,0 +1,45 @@
+{
+  "home": {
+    "title": "Home",
+    "gameTitle": "Spy & Insider",
+    "category": "Category",
+    "spies": "Spies",
+    "insiders": "Insiders",
+    "start": "Start 🎲",
+    "gameResultsModal": {
+      "title": "Game Results",
+      "totalPlayers": "Total Players",
+      "playersLeft": "Players Left",
+      "hide":"Hide",
+      "show": "Show",
+      "resetGame": "Reset Game"
+    },
+    "categories": {
+    "fruitAndVegetables": "Fruit and Vegetables",
+    "landmark": "Landmark",
+    "animal": "Animal",
+    "cityAndCountry": "City and Country",
+    "movieAndSerial": "Movie and Serial",
+    "foodAndCuisine": "Food and Cuisine",
+    "sport": "Sports",
+    "things": "Things",
+    "profession":"Profession",
+    "mixedCategory":"Mixed Category"
+    }
+  },
+  "settings":{
+    "title": "Settings",
+    "language": "Language",
+    "theme": "Theme",
+    "about": "About",
+    "softwareUpdates": "Software Updates"
+  },
+  "profile": {
+    "title": "Profile",
+    "name": "Name",
+    "email": "Email",
+    "country": "Country",
+    "save": "Save",
+    "cancel": "Cancel"
+  }
+}

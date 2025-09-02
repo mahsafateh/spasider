@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import { store } from "@/store/index";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { TabNavigator } from "@/components/navigation";
+import "@/lib/i18n";
 
 export default function RootLayout() {
   const [fontsLoaded, error] = useFonts({

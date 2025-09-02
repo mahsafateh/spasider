@@ -14,6 +14,8 @@ import { showRole, hideRole, resetGame } from "@/store/gameSlice";
 import PrimaryButton from "./PrimaryButton";
 import { GameResultsModalProps } from "@/types/index";
 
+import i18next from "i18next";
+
 const WORD_BOX_HEIGHT = 60;
 
 const GameResultsModal: React.FC<GameResultsModalProps> = ({
@@ -71,7 +73,7 @@ const GameResultsModal: React.FC<GameResultsModalProps> = ({
             >
               <View className="flex-row items-center justify-between mb-4">
                 <Text className="font-quicksand-bold text-lg">
-                  Game Results
+                  {i18next.t("home.gameResultsModal.title")}
                 </Text>
                 <TouchableOpacity onPress={() => dispatch(resetGame())}>
                   <Text className="text-blue-500 font-quicksand-semibold">
@@ -86,17 +88,19 @@ const GameResultsModal: React.FC<GameResultsModalProps> = ({
                 {!loading && (
                   <>
                     <Text className="font-quicksand-semibold text-2xl">
-                      Insiders: {insiders}
+                      {i18next.t("home.insiders")}: {insiders}
                     </Text>
                     <Text className="font-quicksand-semibold text-2xl">
-                      Spies: {spies}
+                      {i18next.t("home.spies")}: {spies}
                     </Text>
                     <Text className="font-quicksand-semibold text-2xl">
-                      Total Players: {insiders + spies}
+                      {i18next.t("home.gameResultsModal.totalPlayers")}:{" "}
+                      {insiders + spies}
                     </Text>
                     <View className="my-4">
                       <Text className="mb-2 font-quicksand-semibold text-2xl">
-                        Players left: {roles.length + (currentRole ? 1 : 0)}
+                        {i18next.t("home.gameResultsModal.playersLeft")}:{" "}
+                        {roles.length + (currentRole ? 1 : 0)}
                       </Text>
                     </View>
 
@@ -107,7 +111,9 @@ const GameResultsModal: React.FC<GameResultsModalProps> = ({
                       {showWord ? (
                         <>
                           <Text className="text-2xl font-quicksand-semibold">
-                            {currentRole === "insider" ? word : "جاسوس"}
+                            {currentRole === `${i18next.t("home.insiders")}`
+                              ? word
+                              : word}
                           </Text>
                           <Text className="mt-2 font-quicksand-semibold text-gray-500">
                             ({currentRole?.toUpperCase()})
@@ -121,7 +127,11 @@ const GameResultsModal: React.FC<GameResultsModalProps> = ({
                     <View className="flex-row items-center justify-center w-full">
                       {roles.length > 0 || showWord ? (
                         <PrimaryButton
-                          title={showWord ? "Hide" : "Show"}
+                          title={
+                            showWord
+                              ? `${i18next.t("home.gameResultsModal.hide")}`
+                              : `${i18next.t("home.gameResultsModal.show")}`
+                          }
                           className="bg-blue-500"
                           onPress={() => {
                             if (showWord) {
@@ -135,7 +145,7 @@ const GameResultsModal: React.FC<GameResultsModalProps> = ({
                         roles.length === 0 &&
                         !showWord && (
                           <PrimaryButton
-                            title="Reset Game"
+                            title={i18next.t("home.gameResultsModal.resetGame")}
                             className="bg-red-500"
                             onPress={() => dispatch(resetGame())}
                           />

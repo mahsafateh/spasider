@@ -6,9 +6,12 @@ import LanguageScreen from "@/screens/settingScreens/LanguageScreen";
 import ThemeScreen from "@/screens/settingScreens/ThemeScreen";
 import SoftwareUpdatesScreen from "@/screens/settingScreens/SoftwareUpdatesScreen";
 
+import { useTranslation } from "react-i18next";
+
 const Stack = createStackNavigator();
 
 export default function SettingsStack() {
+  const { t } = useTranslation();
   return (
     <Stack.Navigator
       screenOptions={{
@@ -26,28 +29,28 @@ export default function SettingsStack() {
         name="About"
         component={AboutScreen}
         options={{
-          title: "About",
+          title: t("settings.about"),
         }}
       />
       <Stack.Screen
         name="Language"
         component={LanguageScreen}
         options={{
-          title: "Language",
+          title: t("settings.language"),
         }}
       />
       <Stack.Screen
         name="Theme"
         component={ThemeScreen}
         options={{
-          title: "Theme",
+          title: t("settings.theme"),
         }}
       />
       <Stack.Screen
         name="SoftwareUpdates"
         component={SoftwareUpdatesScreen}
         options={{
-          title: "Software Updates",
+          title: t("settings.softwareUpdates"),
         }}
       />
     </Stack.Navigator>

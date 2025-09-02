@@ -5,10 +5,13 @@ import Profile from "@/app/(tabs)/Profile";
 import SettingsStack from "@/components/navigation/SettingsStack";
 import Index from "@/app/(tabs)/index";
 
+import { useTranslation } from "react-i18next";
+
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigator() {
   const insets = useSafeAreaInsets();
+  const { t } = useTranslation();
 
   return (
     <Tab.Navigator
@@ -49,7 +52,7 @@ export default function TabNavigator() {
         name="index"
         component={Index}
         options={{
-          title: "Home",
+          title: t("home.title"),
           tabBarIcon: ({ focused }) => (
             <Ionicons name={focused ? "home" : "home-outline"} size={24} />
           ),
@@ -59,7 +62,7 @@ export default function TabNavigator() {
         name="Settings"
         component={SettingsStack}
         options={{
-          title: "Settings",
+          title: t("settings.title"),
           headerShown: false,
           tabBarIcon: ({ focused }) => (
             <Ionicons
@@ -73,7 +76,7 @@ export default function TabNavigator() {
         name="Profile"
         component={Profile}
         options={{
-          title: "Profile",
+          title: t("profile.title"),
           headerTitle: "My Profile",
           tabBarIcon: ({ focused }) => (
             <Ionicons name={focused ? "person" : "person-outline"} size={24} />

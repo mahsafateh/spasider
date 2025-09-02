@@ -1,0 +1,45 @@
+{
+  "home": {
+    "title" : "Hem",
+    "gameTitle": "Spion & Insider",
+    "category": "Kategory",
+    "spies": "Spioner",
+    "insiders": "Insiders",
+    "start": "Start 🎲",
+    "gameResultsModal": {
+      "title": "Spelresultat",
+      "totalPlayers": "Totalt antal Spelare",
+      "playersLeft": "Spelare kvar",
+      "show": "Visa",
+      "hide": "Dölja",
+      "resetGame": "Återställ spelet"
+    },
+    "categories": {
+    "fruitAndVegetables": "Frukt och grönsaker",
+    "landmark": "Landmärke",
+    "animal": "Djur",
+    "cityAndCountry": "Stad och land",
+    "movieAndSerial": "Film och Serie",
+    "foodAndCuisine": "Mat och kök",
+    "sport": "Sport",
+    "things": "Saker",
+    "profession":"Yrke",
+    "mixedCategory":"Blandad kategori"
+    }
+  },
+  "settings":{
+    "title": "Inställningar",
+    "language": "Språk",
+    "theme": "Tema",
+    "about": "Om",
+    "softwareUpdates": "Programuppdateringar"
+  },
+  "profile": {
+    "title": "Profil",
+    "name": "Namn",
+    "email": "e-post",
+    "country": "Land",
+    "save": "Spara",
+    "cancel": "Avbryt"
+  }
+}
