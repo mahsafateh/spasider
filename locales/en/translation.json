@@ -6,9 +6,12 @@
     "spies": "Spies",
     "insiders": "Insiders",
     "start": "Start 🎲",
-    "gameResults": "Game Results",
     "gameResultsModal": {
-      "title": "Game Results"
+      "title": "Game Results",
+      "totalPlayers": "Total Players",
+      "playersLeft": "Players Left",
+      "hide":"Hide",
+      "show": "Show"
     },
     "categories": {
     "fruitAndVegetables": "Fruit and Vegetables",

@@ -6,9 +6,12 @@
     "spies": "جاسوس",
     "insiders": "خودی",
     "start": "شروع 🎲",
-    "gameResults": "نتایج بازی",
     "gameResultsModal": {
-      "title": "نتایج بازی"
+      "title": "نتایج بازی",
+      "totalPlayers": "تعداد بازیکن ها",
+      "playersLeft": "یازیکنان باقی مانده",
+      "show": "نمایش",
+      "hide": "مخفی"
     },
     "categories": {
       "fruitAndVegetables": "میوه و سبزی",

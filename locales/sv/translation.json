@@ -6,9 +6,12 @@
     "spies": "Spioner",
     "insiders": "Insiders",
     "start": "Start 🎲",
-    "gameResults": "Spelresultat",
     "gameResultsModal": {
-      "title": "Spelresultat"
+      "title": "Spelresultat",
+      "totalPlayers": "Totalt antal Spelare",
+      "playersLeft": "Spelare kvar",
+      "show": "Visa",
+      "hide": "Dölja"
     },
     "categories": {
     "fruitAndVegetables": "Frukt och grönsaker",
