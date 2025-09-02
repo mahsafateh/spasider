@@ -3,7 +3,10 @@ import Icon from "react-native-vector-icons/Ionicons";
 
 export const Tile = ({ icon, label, onPress, visible }: any) => {
   return (
-    <TouchableOpacity className="flex-row items-center p-4 " onPress={onPress}>
+    <TouchableOpacity
+      className="flex-row items-center p-4 w-full"
+      onPress={onPress}
+    >
       {visible ? (
         <Icon name={icon} size={24} color="#888" className={"mr-4"} />
       ) : null}

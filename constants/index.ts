@@ -1,9 +1,9 @@
 // Ensure i18n is initialized before using translation keys here
 import "@/lib/i18n";
-import i18next, { t } from "i18next";
-export const categories = [
+import { TFunction } from "i18next";
+export const buildCategories = (t: TFunction) => [
   {
-    name: i18next.t("home.categories.sport"),
+    name: t("home.categories.sport"),
     words: [
       "Football",
       "Basketball",
@@ -19,7 +19,7 @@ export const categories = [
     id: "7",
   },
   {
-    name: i18next.t("home.categories.animal"),
+    name: t("home.categories.animal"),
     words: [
       "Lion",
       "Elephant",
@@ -35,7 +35,7 @@ export const categories = [
     id: "3",
   },
   {
-    name: i18next.t("home.categories.things"),
+    name: t("home.categories.things"),
     words: [
       "Red",
       "Blue",
@@ -51,7 +51,7 @@ export const categories = [
     id: "8",
   },
   {
-    name: i18next.t("home.categories.landmark"),
+    name: t("home.categories.landmark"),
     words: [
       "Eiffel Tower",
       "Statue of Liberty",
@@ -68,7 +68,7 @@ export const categories = [
   },
 
   {
-    name: i18next.t("home.categories.profession"),
+    name: t("home.categories.profession"),
     words: [
       "Doctor",
       "Teacher",
@@ -84,7 +84,7 @@ export const categories = [
     id: "9",
   },
   {
-    name: i18next.t("home.categories.fruitAndVegetables"),
+    name: t("home.categories.fruitAndVegetables"),
     words: [
       "Apple",
       "Banana",
@@ -101,7 +101,7 @@ export const categories = [
   },
 
   {
-    name: i18next.t("home.categories.movieAndSerial"),
+    name: t("home.categories.movieAndSerial"),
     words: [
       "Titanic",
       "Avatar",
@@ -117,7 +117,7 @@ export const categories = [
     id: "4",
   },
   {
-    name: i18next.t("home.categories.cityAndCountry"),
+    name: t("home.categories.cityAndCountry"),
     words: [
       "USA",
       "Canada",
@@ -133,7 +133,7 @@ export const categories = [
     id: "5",
   },
   {
-    name: i18next.t("home.categories.foodAndCuisine"),
+    name: t("home.categories.foodAndCuisine"),
     words: [
       "Pizza",
       "Sushi",
@@ -150,7 +150,7 @@ export const categories = [
   },
 
   {
-    name: i18next.t("home.categories.mixedCategory"),
+    name: t("home.categories.mixedCategory"),
     words: [
       "سیلی",
       "شکلات",
