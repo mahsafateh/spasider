@@ -96,9 +96,13 @@ export default function FloatingLabelPicker({
               className={"font-quicksand-semibold"}
               data={viewList}
               keyExtractor={(item) => item.id}
+              ItemSeparatorComponent={() => (
+                <View className="self-center bg-gray-300 w-[85%] h-[0.5]" />
+              )}
+              showsVerticalScrollIndicator={false}
               renderItem={({ item }) => (
                 <TouchableOpacity
-                  className={"py-3 px-2 w-full"}
+                  className={"py-3 px-2 w-full items-center"}
                   onPress={() => {
                     onValueChange(item.name);
                     setModalVisible(false);
@@ -107,12 +111,11 @@ export default function FloatingLabelPicker({
                 >
                   <Text
                     className={
-                      "self-center font-quicksand-semibold text-base p-[0.5]"
+                      "font-quicksand-semibold text-base p-[0.5] text-center"
                     }
                   >
                     {item.name}
                   </Text>
-                  <View className="bg-gray-300 w-full h-[0.5]"></View>
                 </TouchableOpacity>
               )}
             />
