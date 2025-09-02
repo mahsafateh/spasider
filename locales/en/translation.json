@@ -8,6 +8,18 @@
     "gameResults": "Game Results",
     "gameResultsModal": {
       "title": "Game Results"
+    },
+    "categories": {
+    "fruitAndVegetables": "Fruit and Vegetables",
+    "landmark": "Landmark",
+    "animal": "Animal",
+    "cityAndCountry": "City and Country",
+    "movieAndSeirial": "Movie and Seirial",
+    "foodAndCuisine": "Food and Cuisine",
+    "sport": "Sports",
+    "things": "Things",
+    "profession":"Profession",
+    "mixedCategory":"Mixed Category"
     }
   },
   "settings":{

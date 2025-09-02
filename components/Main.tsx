@@ -8,6 +8,8 @@ import FloatingLabelPicker from "@/components/FloatingLabelPicker";
 import PrimaryButton from "@/components/PrimaryButton";
 import GameResultsModal from "@/components/GameResultsModal";
 
+import i18next from "i18next";
+
 type GameData = {
   insiders: number;
   spies: number;
@@ -84,20 +86,20 @@ function Main() {
           style={{ width: "100%", maxWidth: 400, alignSelf: "center" }}
         >
           <FloatingLabelPicker
-            label="Category"
+            label={i18next.t("home.category")}
             value={selectedCategory}
             onValueChange={setSelectedCategory}
           />
 
           <FloatingLabelInput
-            label="Spies"
+            label={i18next.t("home.spies")}
             value={spyInputValue}
             onChangeText={setSpyInputValue}
             minValue={1}
           />
 
           <FloatingLabelInput
-            label="Insiders"
+            label={i18next.t("home.insiders")}
             value={insiderInputValue}
             onChangeText={setInsiderInputValue}
             minValue={1}
@@ -105,7 +107,7 @@ function Main() {
         </View>
 
         <PrimaryButton
-          title={"Start 🎲"}
+          title={i18next.t("home.start")}
           disabled={loading || gameStarted}
           onPress={handleStart}
           className="bg-[#FFB823]"

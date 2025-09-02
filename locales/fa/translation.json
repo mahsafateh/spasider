@@ -8,7 +8,19 @@
     "gameResults": "نتایج بازی",
     "gameResultsModal": {
       "title": "نتایج بازی"
-    }
+    },
+    "categories": {
+      "fruitAndVegetables": "میوه و سبزی",
+      "landmark": "تاریخی و فرهنگی",
+      "animal": "حیوانات",
+      "cityAndCountry": "شهر و کشور",
+      "movieAndSeirial": "فیلم و سریال",
+      "foodAndCuisine": "غذا",
+      "sport": "ورزش",
+      "things": "اشیاء",
+      "profession":"مشاغل",
+      "mixedCategory":"همه‌ دسته‌بندی‌ها"
+      }
   },
   "settings":{
     "title": "تنظیمات",
