@@ -1,6 +1,7 @@
 {
   "home": {
-    "title": "Spy & Insider",
+    "title": "Home",
+    "gameTitle": "Spy & Insider",
     "category": "Category",
     "spies": "Spies",
     "insiders": "Insiders",

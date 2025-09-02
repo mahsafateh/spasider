@@ -54,8 +54,7 @@ export default function Index() {
               >
                 <View className="relative h-12 justify-center">
                   <View className="absolute left-0 right-0 items-center">
-                    {/* <Title title={"Spy & Insider"} /> */}
-                    <Title title={i18next.t("home.title")} />
+                    <Title title={i18next.t("home.gameTitle")} />
                   </View>
                   <ResetButton
                     iconName="restart"

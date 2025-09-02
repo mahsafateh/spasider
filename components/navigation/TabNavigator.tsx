@@ -5,6 +5,8 @@ import Profile from "@/app/(tabs)/Profile";
 import SettingsStack from "@/components/navigation/SettingsStack";
 import Index from "@/app/(tabs)/index";
 
+import i18next from "i18next";
+
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigator() {
@@ -49,7 +51,7 @@ export default function TabNavigator() {
         name="index"
         component={Index}
         options={{
-          title: "Home",
+          title: i18next.t("home.title"),
           tabBarIcon: ({ focused }) => (
             <Ionicons name={focused ? "home" : "home-outline"} size={24} />
           ),
@@ -59,7 +61,7 @@ export default function TabNavigator() {
         name="Settings"
         component={SettingsStack}
         options={{
-          title: "Settings",
+          title: i18next.t("settings.title"),
           headerShown: false,
           tabBarIcon: ({ focused }) => (
             <Ionicons
@@ -73,7 +75,7 @@ export default function TabNavigator() {
         name="Profile"
         component={Profile}
         options={{
-          title: "Profile",
+          title: i18next.t("profile.title"),
           headerTitle: "My Profile",
           tabBarIcon: ({ focused }) => (
             <Ionicons name={focused ? "person" : "person-outline"} size={24} />
