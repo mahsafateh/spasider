@@ -1,20 +1,21 @@
 import {
-  View,
-  Text,
-  Modal,
-  TouchableOpacity,
-  ScrollView,
-  Platform,
   ImageBackground,
+  Modal,
+  Platform,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store";
-import { showRole, hideRole, resetGame } from "@/store/gameSlice";
+import { hideRole, resetGame, showRole } from "@/store/gameSlice";
 import PrimaryButton from "./PrimaryButton";
-import { GameResultsModalProps } from "@/types/index";
+import { GameResultsModalProps } from "@/types";
 
 import i18next from "i18next";
+import React from "react";
 
 const WORD_BOX_HEIGHT = 60;
 
@@ -111,9 +112,9 @@ const GameResultsModal: React.FC<GameResultsModalProps> = ({
                       {showWord ? (
                         <>
                           <Text className="text-2xl font-quicksand-semibold">
-                            {currentRole === `${i18next.t("home.insiders")}`
+                            {currentRole === "insider"
                               ? word
-                              : word}
+                              : i18next.t("home.spies")}
                           </Text>
                           <Text className="mt-2 font-quicksand-semibold text-gray-500">
                             ({currentRole?.toUpperCase()})
