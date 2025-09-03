@@ -1,4 +1,3 @@
-// Ensure i18n is initialized before using translation keys here
 import "@/lib/i18n";
 import { TFunction } from "i18next";
 export const buildCategories = (t: TFunction) => [
