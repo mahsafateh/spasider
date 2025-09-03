@@ -1,10 +1,10 @@
 import {
-  TouchableWithoutFeedback,
+  ImageBackground,
   Keyboard,
   KeyboardAvoidingView,
-  View,
-  ImageBackground,
   Platform,
+  TouchableWithoutFeedback,
+  View,
 } from "react-native";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -13,7 +13,7 @@ import Title from "@/components/Title";
 import Main from "@/components/Main";
 import ResetButton from "@/components/ResetButton";
 import { resetGame } from "@/store/gameSlice";
-import { persistor } from "@/store/index";
+import { persistor } from "@/store";
 
 import { useTranslation } from "react-i18next";
 

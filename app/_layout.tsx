@@ -3,7 +3,7 @@ import "./global.css";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
 import { Provider } from "react-redux";
-import { store } from "@/store/index";
+import { store } from "@/store";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { TabNavigator } from "@/components/navigation";
 import "@/lib/i18n";
