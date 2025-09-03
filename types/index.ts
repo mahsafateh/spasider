@@ -16,12 +16,17 @@ export interface FloatingLabelPickerProps extends TextInputProps {
   label?: string;
   value?: string;
   onValueChange: (text: string) => void;
-  viewList: Categories[];
+  viewList: CategoryOption[];
 }
 
 export interface Categories {
   name: string;
   words: string[];
+  id: string;
+}
+
+export interface CategoryOption {
+  name: string;
   id: string;
 }
 

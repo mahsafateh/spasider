@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
-import { categories } from "@/constants/index";
+import { getWordsForCategoryDisplayName } from "@/constants/index";
 import { GameState } from "@/types";
 
 const initialState: GameState = {
@@ -19,8 +19,7 @@ export const fetchWord = createAsyncThunk(
   "game/fetchWord",
   async (categoryName: string, { rejectWithValue }) => {
     try {
-      const category = categories.find((c) => c.name === categoryName);
-      const words: string[] = category?.words ?? [];
+      const words: string[] = getWordsForCategoryDisplayName(categoryName);
       const pool = words.length > 0 ? words : ["Random"];
       const randomWord = pool[Math.floor(Math.random() * pool.length)];
       return randomWord;
