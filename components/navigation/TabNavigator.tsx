@@ -1,7 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import Profile from "@/app/(tabs)/Profile";
 import SettingsStack from "@/components/navigation/SettingsStack";
 import Index from "@/app/(tabs)/index";
 
@@ -72,17 +71,17 @@ export default function TabNavigator() {
           ),
         }}
       />
-      <Tab.Screen
-        name="Profile"
-        component={Profile}
-        options={{
-          title: t("profile.title"),
-          headerTitle: "My Profile",
-          tabBarIcon: ({ focused }) => (
-            <Ionicons name={focused ? "person" : "person-outline"} size={24} />
-          ),
-        }}
-      />
+      {/*<Tab.Screen*/}
+      {/*  name="Profile"*/}
+      {/*  component={Profile}*/}
+      {/*  options={{*/}
+      {/*    title: t("profile.title"),*/}
+      {/*    headerTitle: "My Profile",*/}
+      {/*    tabBarIcon: ({ focused }) => (*/}
+      {/*      <Ionicons name={focused ? "person" : "person-outline"} size={24} />*/}
+      {/*    ),*/}
+      {/*  }}*/}
+      {/*/>*/}
     </Tab.Navigator>
   );
 }
