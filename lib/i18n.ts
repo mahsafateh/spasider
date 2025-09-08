@@ -25,7 +25,7 @@ i18n.use(initReactI18next).init({
 
 const applyLayoutDirection = (lang: string) => {
   const base = lang?.split("-")[0] || "en";
-  const isRtlLang = base === "fa"; // extend here if more RTL languages are added
+  const isRtlLang = base === "fa";
   if (I18nManager.isRTL !== isRtlLang) {
     I18nManager.allowRTL(true);
     I18nManager.forceRTL(isRtlLang);
