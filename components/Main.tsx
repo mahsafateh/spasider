@@ -9,6 +9,7 @@ import PrimaryButton from "@/components/PrimaryButton";
 import GameResultsModal from "@/components/GameResultsModal";
 import { buildCategories } from "@/constants";
 import { useTranslation } from "react-i18next";
+import Card from "@/components/Card";
 
 type GameData = {
   insiders: number;
@@ -78,45 +79,44 @@ function Main() {
           flexGrow: 1,
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: Platform.OS === "ios" ? "#EEEEEE" : "#fff",
         }}
         keyboardShouldPersistTaps="handled"
+        className="flex-1"
       >
-        <View
-          className={"rounded-lg p-4"}
-          style={{ width: "100%", maxWidth: 400, alignSelf: "center" }}
-        >
-          <FloatingLabelPicker
-            label={t("home.category")}
-            value={selectedCategory}
-            onValueChange={setSelectedCategory}
-            viewList={useMemo(() => buildCategories(t), [t])}
-          />
+        <Card className="w-full max-w-[400px] bg-white">
+          <View className="w-full">
+            <FloatingLabelPicker
+              label={t("home.category")}
+              value={selectedCategory}
+              onValueChange={setSelectedCategory}
+              viewList={useMemo(() => buildCategories(t), [t])}
+            />
 
-          <FloatingLabelInput
-            label={t("home.spies")}
-            value={spyInputValue}
-            onChangeText={setSpyInputValue}
-            minValue={1}
-          />
+            <FloatingLabelInput
+              label={t("home.spies")}
+              value={spyInputValue}
+              onChangeText={setSpyInputValue}
+              minValue={1}
+            />
 
-          <FloatingLabelInput
-            label={t("home.insiders")}
-            value={insiderInputValue}
-            onChangeText={setInsiderInputValue}
-            minValue={1}
-          />
-        </View>
+            <FloatingLabelInput
+              label={t("home.insiders")}
+              value={insiderInputValue}
+              onChangeText={setInsiderInputValue}
+              minValue={1}
+            />
+          </View>
 
-        <PrimaryButton
-          title={t("home.start")}
-          disabled={loading || gameStarted}
-          onPress={handleStart}
-          className="bg-[#FFB823]"
-        />
+          <PrimaryButton
+            title={t("home.start")}
+            disabled={loading || gameStarted}
+            onPress={handleStart}
+            accessibilityHint="Starts the game with the provided settings"
+            className="w-full mt-2"
+          />
+        </Card>
       </ScrollView>
 
-      {/* Game Results Modal */}
       {gameData && (
         <GameResultsModal
           visible={showResultsModal}

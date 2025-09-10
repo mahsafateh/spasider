@@ -2,7 +2,6 @@ import {
   ImageBackground,
   Keyboard,
   KeyboardAvoidingView,
-  Platform,
   TouchableWithoutFeedback,
   View,
 } from "react-native";
@@ -16,6 +15,7 @@ import { resetGame } from "@/store/gameSlice";
 import { persistor } from "@/store";
 
 import { useTranslation } from "react-i18next";
+import Card from "@/components/Card";
 
 export default function Index() {
   const { t } = useTranslation();
@@ -37,34 +37,20 @@ export default function Index() {
           imageStyle={{ opacity: 0.9 }}
         >
           <SafeAreaView className={"flex-1"}>
-            <View
-              className={
-                "flex-1 justify-between font-quicksand-semibold ios:opacity-[0.95]"
-              }
-            >
-              <View
-                style={{
-                  backgroundColor: Platform.OS === "ios" ? "#EEEEEE" : "#fff",
-                  shadowColor: "#000",
-                  shadowOffset: { width: 0, height: 4 },
-                  shadowOpacity: 0.1,
-                  shadowRadius: 20,
-                  elevation: 30,
-                }}
-                className={" rounded-2xl shadow-lg p-2 m-4"}
-              >
+            <View className={"flex-1 ios:opacity-[0.96]"}>
+              <Card className={"p-2 m-4"}>
                 <View className="relative h-12 justify-center">
                   <View className="absolute left-0 right-0 items-center">
                     <Title title={t("home.gameTitle")} />
                   </View>
                   <ResetButton
                     iconName="restart"
-                    className="absolute right-2 top-1 py-2 px-2 mb-0"
+                    className="absolute right-2 top-1"
                     onPress={onReset}
                   />
                 </View>
-                <Main key={resetKey} />
-              </View>
+              </Card>
+              <Main key={resetKey} />
             </View>
           </SafeAreaView>
         </ImageBackground>

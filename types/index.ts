@@ -38,6 +38,8 @@ export interface ButtonProps {
   textStyle?: TextStyle;
   disabled?: boolean;
   className?: string;
+  accessibilityLabel?: string;
+  accessibilityHint?: string;
 }
 
 export interface GameState {

@@ -51,7 +51,7 @@ export default function FloatingLabelInput({
     }),
     color: animatedIsFocused.interpolate({
       inputRange: [0, 1],
-      outputRange: ["#aaa", "#555"],
+      outputRange: ["#6B7280", "#1F2937"],
     }),
   };
 
@@ -61,6 +61,9 @@ export default function FloatingLabelInput({
         {label}
       </Animated.Text>
       <TextInput
+        accessible
+        accessibilityLabel={label}
+        accessibilityHint={`Enter ${label}`}
         keyboardType="numeric"
         value={value}
         onChangeText={onChangeText}

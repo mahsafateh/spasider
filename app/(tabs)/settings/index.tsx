@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 const Index = ({ navigation }: any) => {
   const { t } = useTranslation();
   return (
-    <SafeAreaView className={"flex-1"}>
+    <SafeAreaView className={"flex-1 ios:bg-backgroundMain android:bg-white"}>
       <ScrollView className="flex-1 px-4 pt-4">
         <View className={"px-2 bg-white rounded-xl"}>
           <Tile

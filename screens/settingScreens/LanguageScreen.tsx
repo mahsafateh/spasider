@@ -11,9 +11,21 @@ const LanguageScreen = () => {
           Choose your preferred language
         </Text>
         <View className={"px-2 bg-white rounded-xl w-full mt-2"}>
-          <Tile label="English" onPress={() => i18next.changeLanguage("en")} />
-          <Tile label="Persian" onPress={() => i18next.changeLanguage("fa")} />
-          <Tile label="Svenska" onPress={() => i18next.changeLanguage("sv")} />
+          <Tile
+            label="English"
+            visible={false}
+            onPress={() => i18next.changeLanguage("en")}
+          />
+          <Tile
+            label="Persian"
+            visible={false}
+            onPress={() => i18next.changeLanguage("fa")}
+          />
+          <Tile
+            label="Svenska"
+            visible={false}
+            onPress={() => i18next.changeLanguage("sv")}
+          />
         </View>
       </View>
     </SafeAreaView>

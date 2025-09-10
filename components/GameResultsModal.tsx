@@ -1,7 +1,6 @@
 import {
   ImageBackground,
   Modal,
-  Platform,
   ScrollView,
   Text,
   TouchableOpacity,
@@ -16,6 +15,7 @@ import { GameResultsModalProps } from "@/types";
 
 import i18next from "i18next";
 import React from "react";
+import Card from "@/components/Card";
 
 const WORD_BOX_HEIGHT = 60;
 
@@ -25,6 +25,7 @@ const GameResultsModal: React.FC<GameResultsModalProps> = ({
 }) => {
   const dispatch = useDispatch();
   const {
+    category,
     spies,
     insiders,
     word,
@@ -58,26 +59,20 @@ const GameResultsModal: React.FC<GameResultsModalProps> = ({
               justifyContent: "center",
             }}
             keyboardShouldPersistTaps="handled"
+            className="flex-1"
           >
-            <View
-              className="rounded-3xl p-4 m-4"
-              style={{
-                backgroundColor: Platform.OS === "ios" ? "#EEEEEE" : "#fff",
-                shadowColor: "#000",
-                shadowOffset: { width: 0, height: 4 },
-                shadowOpacity: 0.1,
-                shadowRadius: 20,
-                elevation: 30,
-                width: "100%",
-                maxWidth: 400,
-              }}
-            >
+            <Card className="w-full max-w-[400px] m-4">
               <View className="flex-row items-center justify-between mb-4">
                 <Text className="font-quicksand-bold text-lg">
                   {i18next.t("home.gameResultsModal.title")}
                 </Text>
-                <TouchableOpacity onPress={() => dispatch(resetGame())}>
-                  <Text className="text-blue-500 font-quicksand-semibold">
+                <TouchableOpacity
+                  accessible
+                  accessibilityRole="button"
+                  accessibilityLabel="Close and reset game"
+                  onPress={() => dispatch(resetGame())}
+                >
+                  <Text className="text-blue-600 font-quicksand-semibold">
                     ✕
                   </Text>
                 </TouchableOpacity>
@@ -85,9 +80,12 @@ const GameResultsModal: React.FC<GameResultsModalProps> = ({
 
               <View className="items-center w-full">
                 {loading && <Text>Loading...</Text>}
-                {error && <Text className="text-red-500">{error}</Text>}
+                {error && <Text className="text-red-600">{error}</Text>}
                 {!loading && (
                   <>
+                    <Text className="font-quicksand-semibold text-2xl">
+                      {i18next.t("home.category")}: {category}
+                    </Text>
                     <Text className="font-quicksand-semibold text-2xl">
                       {i18next.t("home.insiders")}: {insiders}
                     </Text>
@@ -133,7 +131,7 @@ const GameResultsModal: React.FC<GameResultsModalProps> = ({
                               ? `${i18next.t("home.gameResultsModal.hide")}`
                               : `${i18next.t("home.gameResultsModal.show")}`
                           }
-                          className="bg-blue-500"
+                          className="w-full mt-2"
                           onPress={() => {
                             if (showWord) {
                               dispatch(hideRole());
@@ -147,7 +145,7 @@ const GameResultsModal: React.FC<GameResultsModalProps> = ({
                         !showWord && (
                           <PrimaryButton
                             title={i18next.t("home.gameResultsModal.resetGame")}
-                            className="bg-red-500"
+                            className="w-full mt-2 bg-red-600"
                             onPress={() => dispatch(resetGame())}
                           />
                         )
@@ -156,7 +154,7 @@ const GameResultsModal: React.FC<GameResultsModalProps> = ({
                   </>
                 )}
               </View>
-            </View>
+            </Card>
           </ScrollView>
         </SafeAreaView>
       </ImageBackground>

@@ -11,15 +11,23 @@ const ResetButton: React.FC<ButtonProps> = ({
 }) => {
   return (
     <TouchableOpacity
+      accessible
+      accessibilityRole="button"
+      accessibilityLabel="Reset game"
+      accessibilityHint="Resets the current game and clears progress"
+      accessibilityState={{ disabled }}
+      hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
       style={style}
       onPress={onPress}
-      activeOpacity={0.6}
+      activeOpacity={0.8}
       disabled={disabled}
-      className={`py-3 px-6 rounded-lg items-center justify-center mb-2 ${
-        disabled ? "bg-gray-400" : ""
-      } ${className ?? ""}`}
+      className={`p-2 rounded-lg items-center justify-center ${className ?? ""}`}
     >
-      <MaterialCommunityIcons name={`${iconName}`} color="#000" size={24} />
+      <MaterialCommunityIcons
+        name={`${iconName}`}
+        color={disabled ? "#6B7280" : "#111827"}
+        size={24}
+      />
     </TouchableOpacity>
   );
 };

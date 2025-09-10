@@ -40,12 +40,16 @@ export default function FloatingLabelPicker({
     }),
     color: animatedIsFocused.interpolate({
       inputRange: [0, 1],
-      outputRange: ["#aaa", "#555"],
+      outputRange: ["#6B7280", "#1F2937"],
     }),
   };
 
   return (
     <Pressable
+      accessible
+      accessibilityRole="button"
+      accessibilityLabel={label}
+      accessibilityHint={`Open ${label} picker`}
       className={"mb-4 pt-[18px]"}
       onPress={() => {
         setModalVisible(true);
@@ -82,7 +86,7 @@ export default function FloatingLabelPicker({
         }}
       >
         <TouchableOpacity
-          className={"flex-1 bg-black/20 justify-center items-center"}
+          className={"flex-1 bg-black/30 justify-center items-center"}
           onPress={() => {
             setModalVisible(false);
             setIsFocused(false);
